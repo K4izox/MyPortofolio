@@ -15,17 +15,17 @@ class ContactMessageController extends Controller
             'message' => 'required|string',
         ]);
 
-        $message = ContactMessage::create($validated);
-
         try {
+            $message = ContactMessage::create($validated);
+            
             // Replace with the owner's actual email or use env variable
-            $adminEmail = env('MAIL_FROM_ADDRESS', 'reza@example.com');
+            $adminEmail = env('MAIL_FROM_ADDRESS', 'reza06117@gmail.com');
             \Illuminate\Support\Facades\Mail::to($adminEmail)->send(new \App\Mail\ContactFormMail($message));
-        } catch (\Exception $e) {
-            // Log error silently so user still sees success even if mail fails
-            \Illuminate\Support\Facades\Log::error('Mail sending failed: ' . $e->getMessage());
+            
+            return redirect()->back()->with('success', 'Message sent successfully!');
+        } catch (\Throwable $e) {
+            \Illuminate\Support\Facades\Log::error('Contact form failed: ' . $e->getMessage());
+            return redirect()->back()->withErrors(['message' => 'Server Error: ' . $e->getMessage()]);
         }
-
-        return redirect()->back()->with('success', 'Message sent successfully!');
     }
 }

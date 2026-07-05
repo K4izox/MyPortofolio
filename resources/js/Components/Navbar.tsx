@@ -108,7 +108,7 @@ export default function Navbar({ activeSection }: NavbarProps) {
             {/* Retro Gamer HUD Stats */}
             <div className={`text-[9px] font-pixel border-l-2 pl-4 text-right leading-relaxed select-none ${isNightMode ? 'border-gray-700 text-gray-300' : 'border-black text-black'}`}>
               <span className="text-red-500 font-extrabold">HP</span> 100/100<br/>
-              <span className="text-blue-500 font-extrabold">MP</span> 3.80/4.00
+              <span className="text-blue-500 font-extrabold">MP</span> 3.79/4.00
             </div>
 
             {/* Day/Night Toggle Button */}

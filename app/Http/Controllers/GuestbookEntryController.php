@@ -14,8 +14,11 @@ class GuestbookEntryController extends Controller
             'message' => 'required|string|max:100',
         ]);
 
-        GuestbookEntry::create($validated);
-
-        return redirect()->back();
+        try {
+            GuestbookEntry::create($validated);
+            return redirect()->back();
+        } catch (\Throwable $e) {
+            return redirect()->back()->withErrors(['message' => 'Error: ' . $e->getMessage()]);
+        }
     }
 }
