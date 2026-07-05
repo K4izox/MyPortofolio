@@ -8,6 +8,11 @@ ini_set('display_errors', '1');
 ini_set('display_startup_errors', '1');
 error_reporting(E_ALL);
 
+if ($_SERVER['REQUEST_URI'] === '/test') {
+    echo "Raw PHP is working! PHP Version: " . phpversion();
+    exit;
+}
+
 $dirs = [
     '/tmp/storage/framework/views',
     '/tmp/storage/framework/cache',
