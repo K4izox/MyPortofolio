@@ -1,0 +1,399 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+  --font-pixel: "Press Start 2P", cursive, system-ui, sans-serif;
+}
+
+/* Base resets and defaults */
+body {
+  font-family: var(--font-sans);
+  background-color: #f8f9fa;
+  color: #1f2937;
+  image-rendering: pixelated;
+  cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="%23FFFFFF" stroke="%23000000" stroke-width="2"><path d="M2,2 L16,7 L10,10 L14,17 L10,19 L6,12 L2,17 Z" stroke-linejoin="miter"/></svg>'), auto;
+}
+
+a, button, [role="button"], input, textarea, select {
+  cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="%23FBBC05" stroke="%23000000" stroke-width="2"><path d="M8,2 L12,2 L12,6 L16,6 L16,10 L20,10 L20,14 L16,14 L16,18 L12,18 L12,22 L8,22 L8,18 L4,18 L4,14 L0,14 L0,10 L4,10 L4,6 L8,6 Z" stroke-linejoin="miter"/></svg>') 12 12, pointer !important;
+}
+
+/* Pixel Custom Classes */
+.pixel-border {
+  border: 4px solid #000000;
+}
+
+.pixel-border-sm {
+  border: 2px solid #000000;
+}
+
+.pixel-shadow {
+  box-shadow: 6px 6px 0px 0px #000000;
+}
+
+.pixel-shadow-sm {
+  box-shadow: 4px 4px 0px 0px #000000;
+}
+
+.pixel-shadow-blue {
+  box-shadow: 6px 6px 0px 0px #4285F4, 12px 12px 0px 0px #000000;
+}
+
+.pixel-shadow-red {
+  box-shadow: 6px 6px 0px 0px #EA4335, 12px 12px 0px 0px #000000;
+}
+
+.pixel-shadow-yellow {
+  box-shadow: 6px 6px 0px 0px #FBBC05, 12px 12px 0px 0px #000000;
+}
+
+.pixel-shadow-green {
+  box-shadow: 6px 6px 0px 0px #34A853, 12px 12px 0px 0px #000000;
+}
+
+.pixel-shadow-flat-blue {
+  box-shadow: 6px 6px 0px 0px #4285F4;
+}
+
+.pixel-shadow-flat-red {
+  box-shadow: 6px 6px 0px 0px #EA4335;
+}
+
+.pixel-shadow-flat-yellow {
+  box-shadow: 6px 6px 0px 0px #FBBC05;
+}
+
+.pixel-shadow-flat-green {
+  box-shadow: 6px 6px 0px 0px #34A853;
+}
+
+/* Button styles */
+.pixel-btn-blue {
+  background-color: #4285F4;
+  color: #ffffff;
+  border: 4px solid #000000;
+  box-shadow: 4px 4px 0px 0px #000000;
+  font-family: var(--font-pixel);
+  font-size: 0.7rem;
+  padding: 0.75rem 1.25rem;
+  display: inline-block;
+  cursor: pointer;
+  transition: all 0.05s ease;
+  user-select: none;
+}
+.pixel-btn-blue:hover {
+  transform: translate(2px, 2px);
+  box-shadow: 2px 2px 0px 0px #000000;
+}
+.pixel-btn-blue:active {
+  transform: translate(4px, 4px);
+  box-shadow: 0px 0px 0px 0px #000000;
+}
+
+.pixel-btn-red {
+  background-color: #EA4335;
+  color: #ffffff;
+  border: 4px solid #000000;
+  box-shadow: 4px 4px 0px 0px #000000;
+  font-family: var(--font-pixel);
+  font-size: 0.7rem;
+  padding: 0.75rem 1.25rem;
+  display: inline-block;
+  cursor: pointer;
+  transition: all 0.05s ease;
+  user-select: none;
+}
+.pixel-btn-red:hover {
+  transform: translate(2px, 2px);
+  box-shadow: 2px 2px 0px 0px #000000;
+}
+.pixel-btn-red:active {
+  transform: translate(4px, 4px);
+  box-shadow: 0px 0px 0px 0px #000000;
+}
+
+.pixel-btn-yellow {
+  background-color: #FBBC05;
+  color: #000000;
+  border: 4px solid #000000;
+  box-shadow: 4px 4px 0px 0px #000000;
+  font-family: var(--font-pixel);
+  font-size: 0.7rem;
+  padding: 0.75rem 1.25rem;
+  display: inline-block;
+  cursor: pointer;
+  transition: all 0.05s ease;
+  user-select: none;
+}
+.pixel-btn-yellow:hover {
+  transform: translate(2px, 2px);
+  box-shadow: 2px 2px 0px 0px #000000;
+}
+.pixel-btn-yellow:active {
+  transform: translate(4px, 4px);
+  box-shadow: 0px 0px 0px 0px #000000;
+}
+
+.pixel-btn-green {
+  background-color: #34A853;
+  color: #ffffff;
+  border: 4px solid #000000;
+  box-shadow: 4px 4px 0px 0px #000000;
+  font-family: var(--font-pixel);
+  font-size: 0.7rem;
+  padding: 0.75rem 1.25rem;
+  display: inline-block;
+  cursor: pointer;
+  transition: all 0.05s ease;
+  user-select: none;
+}
+.pixel-btn-green:hover {
+  transform: translate(2px, 2px);
+  box-shadow: 2px 2px 0px 0px #000000;
+}
+.pixel-btn-green:active {
+  transform: translate(4px, 4px);
+  box-shadow: 0px 0px 0px 0px #000000;
+}
+
+.pixel-btn-white {
+  background-color: #FFFFFF;
+  color: #000000;
+  border: 4px solid #000000;
+  box-shadow: 4px 4px 0px 0px #000000;
+  font-family: var(--font-pixel);
+  font-size: 0.7rem;
+  padding: 0.75rem 1.25rem;
+  display: inline-block;
+  cursor: pointer;
+  transition: all 0.05s ease;
+  user-select: none;
+}
+.pixel-btn-white:hover {
+  transform: translate(2px, 2px);
+  box-shadow: 2px 2px 0px 0px #000000;
+}
+.pixel-btn-white:active {
+  transform: translate(4px, 4px);
+  box-shadow: 0px 0px 0px 0px #000000;
+}
+
+/* Grid background */
+.pixel-grid-bg {
+  background-size: 32px 32px;
+  background-image: linear-gradient(to right, rgba(0, 0, 0, 0.04) 1px, transparent 1px),
+                    linear-gradient(to bottom, rgba(0, 0, 0, 0.04) 1px, transparent 1px);
+  background-position: center;
+}
+
+/* Animations */
+@keyframes coin-bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+.animate-coin {
+  animation: coin-bounce 1.5s infinite ease-in-out;
+}
+
+@keyframes dino-run {
+  0% { background-position: 0px; }
+  100% { background-position: -40px; }
+}
+
+/* Heartbeat animation for active components */
+@keyframes heart-beat {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+}
+.animate-heart {
+  animation: heart-beat 1.2s infinite ease-in-out;
+}
+
+/* Marquee animation */
+@keyframes marquee {
+  0% { transform: translateX(0%); }
+  100% { transform: translateX(-50%); }
+}
+.animate-marquee {
+  animation: marquee 20s linear infinite;
+}
+
+/* Scanline and CRT effects */
+.crt-effect {
+  position: relative;
+  overflow: hidden;
+}
+.crt-effect::before {
+  content: " ";
+  display: block;
+  position: absolute;
+  top: 0; left: 0; bottom: 0; right: 0;
+  background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.08) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.03), rgba(0, 255, 0, 0.01), rgba(0, 0, 255, 0.03));
+  z-index: 10;
+  background-size: 100% 4px, 6px 100%;
+  pointer-events: none;
+}
+
+/* Global Scanlines */
+body::after {
+  content: " ";
+  display: block;
+  position: fixed;
+  top: 0; left: 0; bottom: 0; right: 0;
+  background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.05) 50%);
+  background-size: 100% 4px;
+  z-index: 9999;
+  pointer-events: none;
+  opacity: 0.8;
+  animation: scroll-scanlines 10s linear infinite;
+}
+@keyframes scroll-scanlines {
+  0% { background-position: 0 0; }
+  100% { background-position: 0 100%; }
+}
+
+/* CRT Power Switch Effect */
+body.crt-switch {
+  animation: crt-power-on 0.6s cubic-bezier(0.23, 1, 0.32, 1) forwards;
+}
+@keyframes crt-power-on {
+  0% { transform: scale(1, 0.001); filter: brightness(3); opacity: 0; }
+  50% { transform: scale(1, 0.01); filter: brightness(2); opacity: 1; }
+  100% { transform: scale(1, 1); filter: brightness(1); opacity: 1; }
+}
+
+/* Neon Glow Effect (Night Mode) */
+.night-mode .neon-border {
+  box-shadow: 0 0 10px rgba(66, 133, 244, 0.5), inset 0 0 5px rgba(66, 133, 244, 0.3);
+  border-color: #4285f4;
+  animation: neon-pulse 2s infinite alternate;
+}
+@keyframes neon-pulse {
+  0% { box-shadow: 0 0 5px rgba(66, 133, 244, 0.4), inset 0 0 2px rgba(66, 133, 244, 0.2); }
+  100% { box-shadow: 0 0 15px rgba(66, 133, 244, 0.8), inset 0 0 8px rgba(66, 133, 244, 0.5); }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Glitch Animation */
+.glitch-effect {
+  position: relative;
+  display: inline-block;
+}
+.glitch-effect::before,
+.glitch-effect::after {
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: transparent;
+}
+.glitch-effect::before {
+  left: 2px;
+  text-shadow: -1px 0 red;
+  clip: rect(24px, 550px, 90px, 0);
+  animation: glitch-anim-2 3s infinite linear alternate-reverse;
+}
+.glitch-effect::after {
+  left: -2px;
+  text-shadow: -1px 0 blue;
+  clip: rect(85px, 550px, 140px, 0);
+  animation: glitch-anim 2.5s infinite linear alternate-reverse;
+}
+
+@keyframes glitch-anim {
+  0% { clip: rect(72px, 9999px, 71px, 0); }
+  20% { clip: rect(13px, 9999px, 86px, 0); }
+  40% { clip: rect(65px, 9999px, 2px, 0); }
+  60% { clip: rect(93px, 9999px, 35px, 0); }
+  80% { clip: rect(2px, 9999px, 79px, 0); }
+  100% { clip: rect(44px, 9999px, 58px, 0); }
+}
+@keyframes glitch-anim-2 {
+  0% { clip: rect(65px, 9999px, 100px, 0); }
+  20% { clip: rect(23px, 9999px, 16px, 0); }
+  40% { clip: rect(55px, 9999px, 42px, 0); }
+  60% { clip: rect(103px, 9999px, 5px, 0); }
+  80% { clip: rect(12px, 9999px, 99px, 0); }
+  100% { clip: rect(74px, 9999px, 28px, 0); }
+}
+
+/* Floating Animation */
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0px); }
+}
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-left: 4px solid #000000;
+}
+::-webkit-scrollbar-thumb {
+  background: #4285F4;
+  border: 3px solid #f1f1f1;
+  border-radius: 0px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #3367d6;
+}
+
+/* Hacker Mode (Konami Code Easter Egg) */
+body.hacker-mode {
+  background-color: #000 !important;
+  color: #0f0 !important;
+  filter: invert(1) hue-rotate(180deg);
+}
+
+body.hacker-mode .pixel-grid-bg {
+  background-image: linear-gradient(to right, rgba(0, 255, 0, 0.1) 1px, transparent 1px),
+                    linear-gradient(to bottom, rgba(0, 255, 0, 0.1) 1px, transparent 1px) !important;
+}
+
+/* Night Mode Overrides */
+body.night-mode {
+  background-color: #1a1a2e;
+  color: #f8f9fa;
+}
+
+body.night-mode .bg-white {
+  background-color: #16213e !important;
+}
+
+body.night-mode .text-gray-900,
+body.night-mode .text-black {
+  color: #f8f9fa !important;
+}
+
+body.night-mode .text-gray-600,
+body.night-mode .text-gray-700,
+body.night-mode .text-gray-800 {
+  color: #a0aec0 !important;
+}
+
+body.night-mode .border-black {
+  border-color: #111 !important;
+}
+
+body.night-mode .pixel-grid-bg {
+  background-image: linear-gradient(to right, rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+                    linear-gradient(to bottom, rgba(255, 255, 255, 0.05) 1px, transparent 1px) !important;
+}
+
+body.night-mode .bg-\[\#E5E7EB\],
+body.night-mode .bg-\[\#F8F9FA\],
+body.night-mode .bg-gray-50,
+body.night-mode .bg-gray-100 {
+  background-color: #0f172a !important;
+}
