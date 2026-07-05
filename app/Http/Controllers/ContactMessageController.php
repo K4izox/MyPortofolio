@@ -22,8 +22,8 @@ class ContactMessageController extends Controller
                 // Set a shorter timeout for the mailer to prevent 60s max_execution_time fatal errors
                 config(['mail.mailers.smtp.timeout' => 5]);
                 
-                // Replace with the owner's actual email or use env variable
-                $adminEmail = env('MAIL_FROM_ADDRESS', 'reza06117@gmail.com');
+                // Send to the owner's email (MAIL_TO_ADDRESS)
+                $adminEmail = env('MAIL_TO_ADDRESS', 'reza06117@gmail.com');
                 \Illuminate\Support\Facades\Mail::to($adminEmail)->send(new \App\Mail\ContactFormMail($message));
             } catch (\Throwable $mailError) {
                 // If email fails (e.g., Railway blocks SMTP), log it but don't fail the user request
