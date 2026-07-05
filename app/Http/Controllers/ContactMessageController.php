@@ -18,13 +18,21 @@ class ContactMessageController extends Controller
         try {
             $message = ContactMessage::create($validated);
             
-            // Replace with the owner's actual email or use env variable
-            $adminEmail = env('MAIL_FROM_ADDRESS', 'reza06117@gmail.com');
-            \Illuminate\Support\Facades\Mail::to($adminEmail)->send(new \App\Mail\ContactFormMail($message));
+            try {
+                // Set a shorter timeout for the mailer to prevent 60s max_execution_time fatal errors
+                config(['mail.mailers.smtp.timeout' => 5]);
+                
+                // Replace with the owner's actual email or use env variable
+                $adminEmail = env('MAIL_FROM_ADDRESS', 'reza06117@gmail.com');
+                \Illuminate\Support\Facades\Mail::to($adminEmail)->send(new \App\Mail\ContactFormMail($message));
+            } catch (\Throwable $mailError) {
+                // If email fails (e.g., Railway blocks SMTP), log it but don't fail the user request
+                \Illuminate\Support\Facades\Log::error('Mail sending failed: ' . $mailError->getMessage());
+            }
             
             return redirect()->back()->with('success', 'Message sent successfully!');
         } catch (\Throwable $e) {
-            // Return JSON so it shows up exactly in the Inertia modal
+            // Return JSON so it shows up exactly in the Inertia modal if DB fails
             return response()->json([
                 'error' => 'DEBUG ERROR: ' . $e->getMessage(),
                 'file' => $e->getFile(),
