@@ -13,14 +13,10 @@ use Illuminate\Support\Facades\Artisan;
 Route::get('/migrate', function () {
     try {
         Artisan::call('migrate', ['--force' => true]);
-        return "Database migrated successfully on Vercel!";
+        return "Database migrated successfully!";
     } catch (\Exception $e) {
         return "Error: " . $e->getMessage();
     }
-});
-
-Route::get('/info', function () {
-    return phpinfo();
 });
 
 Route::get('/', function () {
