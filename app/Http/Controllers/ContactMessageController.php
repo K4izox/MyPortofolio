@@ -28,6 +28,9 @@ class ContactMessageController extends Controller
             } catch (\Throwable $mailError) {
                 // If email fails (e.g., Railway blocks SMTP), log it but don't fail the user request
                 \Illuminate\Support\Facades\Log::error('Mail sending failed: ' . $mailError->getMessage());
+                
+                // Write to a public file so we can debug it without Railway Dashboard
+                file_put_contents(public_path('mail-error.txt'), date('Y-m-d H:i:s') . " - " . $mailError->getMessage() . "\n", FILE_APPEND);
             }
             
             return redirect()->back()->with('success', 'Message sent successfully!');
