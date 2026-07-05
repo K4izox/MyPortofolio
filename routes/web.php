@@ -8,6 +8,12 @@ use Inertia\Inertia;
 use App\Http\Controllers\ContactMessageController;
 use App\Http\Controllers\GuestbookEntryController;
 use App\Models\GuestbookEntry;
+use Illuminate\Support\Facades\Artisan;
+
+Route::get('/migrate', function () {
+    Artisan::call('migrate', ['--force' => true]);
+    return "Database migrated successfully on Vercel!";
+});
 
 Route::get('/', function () {
     return Inertia::render('Welcome', [
