@@ -18,7 +18,11 @@ class GuestbookEntryController extends Controller
             GuestbookEntry::create($validated);
             return redirect()->back();
         } catch (\Throwable $e) {
-            return redirect()->back()->withErrors(['message' => 'Error: ' . $e->getMessage()]);
+            return response()->json([
+                'error' => 'DEBUG ERROR: ' . $e->getMessage(),
+                'file' => $e->getFile(),
+                'line' => $e->getLine()
+            ], 500);
         }
     }
 }

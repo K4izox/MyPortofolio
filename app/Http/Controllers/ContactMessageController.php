@@ -24,8 +24,12 @@ class ContactMessageController extends Controller
             
             return redirect()->back()->with('success', 'Message sent successfully!');
         } catch (\Throwable $e) {
-            \Illuminate\Support\Facades\Log::error('Contact form failed: ' . $e->getMessage());
-            return redirect()->back()->withErrors(['message' => 'Server Error: ' . $e->getMessage()]);
+            // Return JSON so it shows up exactly in the Inertia modal
+            return response()->json([
+                'error' => 'DEBUG ERROR: ' . $e->getMessage(),
+                'file' => $e->getFile(),
+                'line' => $e->getLine()
+            ], 500);
         }
     }
 }
