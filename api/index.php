@@ -4,6 +4,10 @@
  * Vercel serverless function entry point for Laravel.
  */
 
+ini_set('display_errors', '1');
+ini_set('display_startup_errors', '1');
+error_reporting(E_ALL);
+
 $dirs = [
     '/tmp/storage/framework/views',
     '/tmp/storage/framework/cache',
