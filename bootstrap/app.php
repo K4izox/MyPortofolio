@@ -17,10 +17,6 @@ return Application::configure(basePath: dirname(__DIR__))
         ]);
 
         $middleware->trustProxies(at: '*');
-        $middleware->validateCsrfTokens(except: [
-            '/contact',
-            '/guestbook',
-        ]);
     })
     ->withExceptions(function (Exceptions $exceptions): void {
         //
