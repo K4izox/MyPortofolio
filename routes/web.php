@@ -11,8 +11,16 @@ use App\Models\GuestbookEntry;
 use Illuminate\Support\Facades\Artisan;
 
 Route::get('/migrate', function () {
-    Artisan::call('migrate', ['--force' => true]);
-    return "Database migrated successfully on Vercel!";
+    try {
+        Artisan::call('migrate', ['--force' => true]);
+        return "Database migrated successfully on Vercel!";
+    } catch (\Exception $e) {
+        return "Error: " . $e->getMessage();
+    }
+});
+
+Route::get('/info', function () {
+    return phpinfo();
 });
 
 Route::get('/', function () {
