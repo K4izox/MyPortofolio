@@ -43,3 +43,11 @@ require __DIR__.'/auth.php';
 
 Route::post('/contact', [ContactMessageController::class, 'store'])->name('contact.store');
 Route::post('/guestbook', [GuestbookEntryController::class, 'store'])->name('guestbook.store');
+
+Route::get('/debug-log', function () {
+    $path = storage_path('logs/laravel.log');
+    if (file_exists($path)) {
+        return response()->file($path, ['Content-Type' => 'text/plain']);
+    }
+    return "No log file found.";
+});
