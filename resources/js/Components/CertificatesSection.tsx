@@ -233,12 +233,12 @@ export default function CertificatesSection() {
                 {/* Badge Issuer */}
                 <div className="mt-4 pt-3 border-t border-dashed border-gray-300 relative">
                   <span className="text-[7px] font-pixel text-gray-400 block mb-1">PROUD ISSUER:</span>
-                  <div className="flex justify-between items-end">
-                    <p className="text-[10px] font-mono font-bold text-gray-700 leading-snug max-w-[60%]">
+                  <div className="flex flex-col gap-2.5">
+                    <p className="text-[10px] font-mono font-bold text-gray-700 leading-snug">
                       {cert.issuer}
                     </p>
-                    <span className="text-[6px] font-pixel text-gray-400 opacity-60 group-hover:opacity-100 sm:hidden animate-pulse">
-                      [ TAP ]
+                    <span className="text-[7px] font-pixel text-[#34A853] bg-green-50 border border-green-300 px-2 py-1.5 inline-block text-center w-full animate-pulse tracking-wide">
+                      [ CLICK / TAP FOR DETAILS ]
                     </span>
                   </div>
                 </div>
