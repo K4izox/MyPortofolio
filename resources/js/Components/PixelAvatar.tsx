@@ -141,6 +141,17 @@ export default function PixelAvatar() {
     }
   };
 
+  const getProfileImage = () => {
+    switch (mode) {
+      case "designer":
+        return "/profile-designer.jpg";
+      case "hacker":
+        return "/profile-hacker.jpg";
+      default:
+        return "/profile.jpg";
+    }
+  };
+
   return (
     <div className="flex flex-col items-center animate-float">
       {/* Visual Frame */}
@@ -165,10 +176,19 @@ export default function PixelAvatar() {
             <div className="w-full h-full relative crt-effect animate-in fade-in zoom-in duration-200">
               <div className="w-full h-full bg-[#4285F4] bg-opacity-20 animate-pulse absolute inset-0 z-10 pointer-events-none mix-blend-overlay"></div>
               <img 
-                src="/profile.jpg" 
-                alt="Reza Fahlevi"
-                className="w-full h-full object-cover object-top grayscale-[20%] contrast-125"
-                onError={(e) => { e.currentTarget.style.display = 'none'; }}
+                key={mode} // Force re-render animation on mode change
+                src={getProfileImage()} 
+                alt={`Reza Fahlevi - ${mode}`}
+                className="w-full h-full object-cover object-top grayscale-[20%] contrast-125 animate-in fade-in duration-300"
+                onError={(e) => { 
+                  // Fallback to default profile if the specific mode photo hasn't been uploaded yet
+                  const target = e.currentTarget;
+                  if (!target.src.endsWith('/profile.jpg')) {
+                    target.src = '/profile.jpg';
+                  } else {
+                    target.style.display = 'none';
+                  }
+                }}
               />
             </div>
           ) : (
