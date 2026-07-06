@@ -119,13 +119,9 @@ export default function ProjectsSection() {
                       e.stopPropagation();
                       playHoverSound();
                     }}
-                    className={`flex-1 ${project.id === "proj-4" ? "pixel-btn-green" : "pixel-btn-blue"} text-[8px] font-pixel text-center py-2 flex justify-center items-center gap-1.5`}
+                    className="flex-1 pixel-btn-blue text-[8px] font-pixel text-center py-2 flex justify-center items-center gap-1.5"
                   >
-                    {project.id === "proj-4" ? (
-                      <>ROOT ACCESS</>
-                    ) : (
-                      <><ExternalLink size={10} /> PLAY DEMO</>
-                    )}
+                    <ExternalLink size={10} /> PLAY DEMO
                   </a>
                   <a
                     href={project.githubUrl}
