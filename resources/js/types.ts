@@ -44,7 +44,9 @@ export const OWNER_DATA = {
     instagram: "rezafahlevitzy",
     instagramUrl: "https://instagram.com/rezafahlevitzy",
     linkedin: "Reza Fahlevi",
-    linkedinUrl: "https://www.linkedin.com/in/reza-fahlevi-157623313"
+    linkedinUrl: "https://www.linkedin.com/in/reza-fahlevi-157623313",
+    github: "K4izox",
+    githubUrl: "https://github.com/K4izox"
   }
 };
 
