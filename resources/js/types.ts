@@ -331,5 +331,14 @@ export const PROJECTS_LIST: Project[] = [
     imageColor: "red",
     techStack: ["Python", "Flask", "Gemini API"],
     githubUrl: "https://github.com/K4izox/HACKTIV8-Project"
+  },
+  {
+    id: "proj-4",
+    title: "Pixel Portfolio (Reza.exe)",
+    description: "Portofolio interaktif bergaya 8-bit retro yang sedang Anda lihat ini! Dilengkapi dengan Mini Games (Mesin Arcade), Hacker Terminal tersembunyi, dan Guestbook.",
+    imageColor: "yellow",
+    techStack: ["Laravel", "React", "Inertia", "Tailwind CSS"],
+    demoUrl: "https://my-portofolio-tau-nine.vercel.app",
+    githubUrl: "https://github.com/K4izox/MyPortofolio"
   }
 ];
