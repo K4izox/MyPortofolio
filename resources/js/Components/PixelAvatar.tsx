@@ -144,9 +144,9 @@ export default function PixelAvatar() {
   const getProfileImage = () => {
     switch (mode) {
       case "designer":
-        return "/profile-designer.jpg";
+        return "/jawa.jpeg";
       case "hacker":
-        return "/profile-hacker.jpg";
+        return "/heker.jpeg";
       default:
         return "/profile.jpg";
     }
