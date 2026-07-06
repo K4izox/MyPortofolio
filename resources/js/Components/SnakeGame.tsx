@@ -390,32 +390,32 @@ export default function SnakeGame() {
       </div>
 
       {/* Mobile D-Pad Controls */}
-      <div className="mt-4 grid grid-cols-3 gap-2 w-48 mx-auto sm:hidden">
+      <div className="mt-6 grid grid-cols-3 gap-3 w-64 mx-auto sm:hidden mb-4">
         <div />
         <button
           onClick={() => handleControlClick(0, -1)}
-          className="bg-gray-200 p-3 flex justify-center items-center active:bg-gray-400 pixel-border active:scale-95 transition-transform text-gray-700"
+          className="bg-gray-200 p-5 flex justify-center items-center active:bg-gray-400 pixel-border active:scale-95 transition-transform text-gray-700"
         >
-          <ArrowUp size={24} />
+          <ArrowUp size={28} />
         </button>
         <div />
         <button
           onClick={() => handleControlClick(-1, 0)}
-          className="bg-gray-200 p-3 flex justify-center items-center active:bg-gray-400 pixel-border active:scale-95 transition-transform text-gray-700"
+          className="bg-gray-200 p-5 flex justify-center items-center active:bg-gray-400 pixel-border active:scale-95 transition-transform text-gray-700"
         >
-          <ArrowLeft size={24} />
+          <ArrowLeft size={28} />
         </button>
         <button
           onClick={() => handleControlClick(0, 1)}
-          className="bg-gray-200 p-3 flex justify-center items-center active:bg-gray-400 pixel-border active:scale-95 transition-transform text-gray-700"
+          className="bg-gray-200 p-5 flex justify-center items-center active:bg-gray-400 pixel-border active:scale-95 transition-transform text-gray-700"
         >
-          <ArrowDown size={24} />
+          <ArrowDown size={28} />
         </button>
         <button
           onClick={() => handleControlClick(1, 0)}
-          className="bg-gray-200 p-3 flex justify-center items-center active:bg-gray-400 pixel-border active:scale-95 transition-transform text-gray-700"
+          className="bg-gray-200 p-5 flex justify-center items-center active:bg-gray-400 pixel-border active:scale-95 transition-transform text-gray-700"
         >
-          <ArrowRight size={24} />
+          <ArrowRight size={28} />
         </button>
       </div>
 

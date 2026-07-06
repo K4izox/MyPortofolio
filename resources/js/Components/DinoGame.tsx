@@ -268,6 +268,7 @@ export default function DinoGame() {
       {/* Main Game Stage Frame */}
       <div
         onClick={jump}
+        onTouchStart={jump}
         className="relative h-56 sm:h-64 bg-[#F8F9FA] pixel-border overflow-hidden select-none cursor-pointer group active:bg-gray-100 transition-colors crt-effect neon-border"
       >
         {/* Pixel Clouds in Background */}
@@ -372,7 +373,7 @@ export default function DinoGame() {
         {!isPlaying && !isGameOver && (
           <div className="absolute inset-0 flex flex-col items-center justify-center bg-black bg-opacity-45 text-white">
             <p className="text-[10px] font-pixel mb-3 tracking-widest text-yellow-300 animate-pulse text-center px-4 leading-relaxed">
-              [ PRESS SPACE / CLICK TO JUMP! ]
+              [ PRESS SPACE / TAP HERE TO JUMP! ]
             </p>
             <button
               onClick={(e) => {

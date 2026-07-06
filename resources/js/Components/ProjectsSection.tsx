@@ -71,9 +71,17 @@ export default function ProjectsSection() {
                       <div className="w-2 h-2 bg-white rounded-full opacity-50"></div>
                       <div className="w-2 h-2 bg-white rounded-full opacity-50"></div>
                    </div>
-                   <h3 className="font-pixel text-white text-[10px] text-center tracking-widest leading-loose opacity-90 drop-shadow-md">
-                     {project.title.toUpperCase()}
-                   </h3>
+                   <div className="flex flex-col items-center gap-1 opacity-90 drop-shadow-md">
+                     <h3 className="font-pixel text-white text-[10px] text-center tracking-widest leading-relaxed">
+                       {project.title.toUpperCase()}
+                     </h3>
+                     <span className="font-pixel text-[6px] text-white bg-black/40 px-1 py-0.5 pixel-border-sm animate-pulse mt-1 sm:hidden">
+                       [ TAP FOR DETAILS ]
+                     </span>
+                     <span className="font-pixel text-[6px] text-white bg-black/40 px-1 py-0.5 pixel-border-sm hidden sm:block group-hover:animate-bounce mt-1 opacity-0 group-hover:opacity-100 transition-opacity">
+                       [ CLICK FOR DETAILS ]
+                     </span>
+                   </div>
                 </div>
               </div>
 
