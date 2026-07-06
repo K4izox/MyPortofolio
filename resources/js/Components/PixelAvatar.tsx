@@ -101,10 +101,10 @@ export default function PixelAvatar() {
         description: 'Menemukan trik rahasia!'
       });
     }
-    
+
     if (newCount >= 5 && !isSuper) {
       setIsSuper(true);
-      
+
       unlock({
         id: 'overclocked',
         title: 'Overclocked!',
@@ -120,7 +120,7 @@ export default function PixelAvatar() {
           const gain = ctx.createGain();
           osc.connect(gain);
           gain.connect(ctx.destination);
-          
+
           // Power up sound
           osc.type = "square";
           osc.frequency.setValueAtTime(440, ctx.currentTime);
@@ -131,7 +131,7 @@ export default function PixelAvatar() {
           osc.start();
           osc.stop(ctx.currentTime + 0.6);
         }
-      } catch (e) {}
+      } catch (e) { }
 
       // Reset after 5 seconds
       setTimeout(() => {
@@ -155,7 +155,7 @@ export default function PixelAvatar() {
   return (
     <div className="flex flex-col items-center animate-float">
       {/* Visual Frame */}
-      <div 
+      <div
         onClick={() => {
           handleAvatarClick();
           // Toggle hover state for mobile devices
@@ -173,13 +173,13 @@ export default function PixelAvatar() {
         {/* Real Photo Reveal or 16x16 Pixel Grid SVG */}
         <div className="relative w-48 h-48 sm:w-56 sm:h-56 bg-white overflow-hidden">
           {isHovering && !isSuper ? (
-            <div className="w-full h-full relative crt-effect animate-in fade-in zoom-in duration-200 bg-black flex items-center justify-center">
-              <img 
+            <div className="w-full h-full relative crt-effect animate-in fade-in zoom-in duration-200">
+              <img
                 key={mode} // Force re-render animation on mode change
-                src={getProfileImage()} 
+                src={getProfileImage()}
                 alt={`Reza Fahlevi - ${mode}`}
-                className="w-full h-full object-contain animate-in fade-in duration-300"
-                onError={(e) => { 
+                className="w-full h-full object-cover object-top animate-in fade-in duration-300"
+                onError={(e) => {
                   // Fallback to default profile if the specific mode photo hasn't been uploaded yet
                   const target = e.currentTarget;
                   if (!target.src.endsWith('/profile.jpg')) {
@@ -200,8 +200,8 @@ export default function PixelAvatar() {
                 row.split("").map((char, x) => {
                   let charCode = char;
                   if (isSuper) {
-                     if (char === "S") charCode = "Y";
-                     if (char === "K") charCode = "R";
+                    if (char === "S") charCode = "Y";
+                    if (char === "K") charCode = "R";
                   }
                   const fillColor = colors[charCode] || "transparent";
                   if (fillColor === "transparent") return null;
@@ -227,11 +227,10 @@ export default function PixelAvatar() {
         <button
           onClick={() => { playClickSound(); setMode("developer"); }}
           onMouseEnter={playHoverSound}
-          className={`flex items-center gap-1.5 px-3 py-1.5 text-[9px] font-pixel transition-all ${
-            mode === "developer"
+          className={`flex items-center gap-1.5 px-3 py-1.5 text-[9px] font-pixel transition-all ${mode === "developer"
               ? "bg-[#4285F4] text-white pixel-border-sm translate-y-0.5"
               : "bg-white text-gray-700 pixel-border-sm hover:translate-y-0.5"
-          }`}
+            }`}
           style={{ boxShadow: mode === "developer" ? "0 0 0" : "2px 2px 0px #000" }}
         >
           <Terminal size={12} />
@@ -241,11 +240,10 @@ export default function PixelAvatar() {
         <button
           onClick={() => { playClickSound(); setMode("designer"); }}
           onMouseEnter={playHoverSound}
-          className={`flex items-center gap-1.5 px-3 py-1.5 text-[9px] font-pixel transition-all ${
-            mode === "designer"
+          className={`flex items-center gap-1.5 px-3 py-1.5 text-[9px] font-pixel transition-all ${mode === "designer"
               ? "bg-[#34A853] text-white pixel-border-sm translate-y-0.5"
               : "bg-white text-gray-700 pixel-border-sm hover:translate-y-0.5"
-          }`}
+            }`}
           style={{ boxShadow: mode === "designer" ? "0 0 0" : "2px 2px 0px #000" }}
         >
           <Sparkles size={12} />
@@ -255,11 +253,10 @@ export default function PixelAvatar() {
         <button
           onClick={() => { playClickSound(); setMode("hacker"); }}
           onMouseEnter={playHoverSound}
-          className={`flex items-center gap-1.5 px-3 py-1.5 text-[9px] font-pixel transition-all ${
-            mode === "hacker"
+          className={`flex items-center gap-1.5 px-3 py-1.5 text-[9px] font-pixel transition-all ${mode === "hacker"
               ? "bg-[#EA4335] text-white pixel-border-sm translate-y-0.5"
               : "bg-white text-gray-700 pixel-border-sm hover:translate-y-0.5"
-          }`}
+            }`}
           style={{ boxShadow: mode === "hacker" ? "0 0 0" : "2px 2px 0px #000" }}
         >
           <Shield size={12} />
