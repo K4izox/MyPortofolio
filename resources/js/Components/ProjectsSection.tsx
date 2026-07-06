@@ -100,10 +100,16 @@ export default function ProjectsSection() {
 
                 <div className="flex items-center gap-2 pt-4 border-t-2 border-dashed border-gray-200 mt-auto">
                   <a
-                    href={project.demoUrl}
+                    href={project.id === "proj-4" ? "#" : project.demoUrl}
                     onClick={(e) => {
                       e.stopPropagation(); // prevent modal opening
                       playClickSound();
+                      if (project.id === "proj-4") {
+                        e.preventDefault();
+                        // Easter Egg: Opening the terminal when clicking demo on the portfolio itself
+                        window.dispatchEvent(new CustomEvent("openTerminal"));
+                        return;
+                      }
                       if (project.demoUrl === "#") {
                         e.preventDefault();
                         alert(`Demo untuk "${project.title}" belum tersedia saat ini.`);
@@ -113,9 +119,13 @@ export default function ProjectsSection() {
                       e.stopPropagation();
                       playHoverSound();
                     }}
-                    className="flex-1 pixel-btn-blue text-[8px] font-pixel text-center py-2 flex justify-center items-center gap-1.5"
+                    className={`flex-1 ${project.id === "proj-4" ? "pixel-btn-green" : "pixel-btn-blue"} text-[8px] font-pixel text-center py-2 flex justify-center items-center gap-1.5`}
                   >
-                    <ExternalLink size={10} /> PLAY DEMO
+                    {project.id === "proj-4" ? (
+                      <>ROOT ACCESS</>
+                    ) : (
+                      <><ExternalLink size={10} /> PLAY DEMO</>
+                    )}
                   </a>
                   <a
                     href={project.githubUrl}
