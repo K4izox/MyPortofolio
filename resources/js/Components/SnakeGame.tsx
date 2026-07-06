@@ -394,26 +394,26 @@ export default function SnakeGame() {
         <div />
         <button
           onClick={() => handleControlClick(0, -1)}
-          className="bg-gray-200 p-5 flex justify-center items-center active:bg-gray-400 pixel-border active:scale-95 transition-transform text-gray-700"
+          className="bg-gray-200 p-5 flex justify-center items-center active:bg-gray-400 pixel-border active:scale-95 transition-transform text-gray-700 touch-manipulation"
         >
           <ArrowUp size={28} />
         </button>
         <div />
         <button
           onClick={() => handleControlClick(-1, 0)}
-          className="bg-gray-200 p-5 flex justify-center items-center active:bg-gray-400 pixel-border active:scale-95 transition-transform text-gray-700"
+          className="bg-gray-200 p-5 flex justify-center items-center active:bg-gray-400 pixel-border active:scale-95 transition-transform text-gray-700 touch-manipulation"
         >
           <ArrowLeft size={28} />
         </button>
         <button
           onClick={() => handleControlClick(0, 1)}
-          className="bg-gray-200 p-5 flex justify-center items-center active:bg-gray-400 pixel-border active:scale-95 transition-transform text-gray-700"
+          className="bg-gray-200 p-5 flex justify-center items-center active:bg-gray-400 pixel-border active:scale-95 transition-transform text-gray-700 touch-manipulation"
         >
           <ArrowDown size={28} />
         </button>
         <button
           onClick={() => handleControlClick(1, 0)}
-          className="bg-gray-200 p-5 flex justify-center items-center active:bg-gray-400 pixel-border active:scale-95 transition-transform text-gray-700"
+          className="bg-gray-200 p-5 flex justify-center items-center active:bg-gray-400 pixel-border active:scale-95 transition-transform text-gray-700 touch-manipulation"
         >
           <ArrowRight size={28} />
         </button>

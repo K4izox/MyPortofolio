@@ -269,7 +269,7 @@ export default function DinoGame() {
       <div
         onClick={jump}
         onTouchStart={jump}
-        className="relative h-56 sm:h-64 bg-[#F8F9FA] pixel-border overflow-hidden select-none cursor-pointer group active:bg-gray-100 transition-colors crt-effect neon-border"
+        className="relative h-56 sm:h-64 bg-[#F8F9FA] pixel-border overflow-hidden select-none cursor-pointer group active:bg-gray-100 transition-colors crt-effect neon-border touch-manipulation"
       >
         {/* Pixel Clouds in Background */}
         {cloudsPos.current.map((cloud, i) => (

@@ -153,8 +153,8 @@ export default function Navbar({ activeSection }: NavbarProps) {
                 onClick={(e) => handleScrollTo(e, item.href)}
                 className={`block w-full text-center px-4 py-2.5 text-[10px] font-pixel transition-all ${
                   isActive
-                    ? "bg-black text-white pixel-border-sm"
-                    : "bg-gray-50 text-gray-800 pixel-border-sm hover:bg-gray-100"
+                    ? "bg-[#EA4335] text-white pixel-border-sm translate-y-0.5"
+                    : (isNightMode ? "bg-gray-800 text-gray-200 hover:bg-gray-700 pixel-border-sm" : "bg-gray-50 text-gray-800 pixel-border-sm hover:bg-gray-100")
                 }`}
                 style={{
                   boxShadow: isActive ? "0px 0px 0px" : "3px 3px 0px #000000",
