@@ -312,6 +312,7 @@ export const PROJECTS_LIST: Project[] = [
     imageColor: "green",
     techStack: ["React", "Gemini API", "Tailwind", "Google AI Studio"],
     demoUrl: "https://lnkd.in/gb7wYuqw",
-    githubUrl: "#"
+    githubUrl: "#",
+    imageUrl: "/images/projects/Demeter.png"
   }
 ];
