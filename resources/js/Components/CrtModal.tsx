@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { X, Image as ImageIcon } from "lucide-react";
+import { X, Image as ImageIcon, ShieldAlert } from "lucide-react";
 import { useTypewriter } from "../hooks/useTypewriter";
 import { useAudio } from "../hooks/useAudio";
 
@@ -94,11 +94,19 @@ export default function CrtModal({ isOpen, onClose, title, description, imageUrl
           <div className="w-full bg-black border-2 border-[#333] p-1 relative flex items-center justify-center min-h-[200px] sm:min-h-[300px] overflow-hidden group">
             {pdfUrl ? (
               <object data={pdfUrl} type="application/pdf" className="w-full min-h-[300px] sm:h-[400px]">
-                <div className="flex flex-col items-center justify-center text-gray-600 gap-2 h-full p-4">
-                  <span className="font-pixel text-[10px] uppercase text-center leading-relaxed">
-                    PDF VIEWER NOT SUPPORTED.<br/><br/>
-                    <a href={pdfUrl} target="_blank" className="text-[#34A853] underline hover:text-white">DOWNLOAD DATA</a>
+                <div className="flex flex-col items-center justify-center gap-4 h-full p-4 bg-black">
+                  <ShieldAlert size={32} className="text-[#EA4335] animate-pulse" />
+                  <span className="font-pixel text-[10px] text-gray-400 uppercase text-center leading-relaxed">
+                    INLINE PDF VIEWER NOT SUPPORTED BY YOUR DEVICE.
                   </span>
+                  <a 
+                    href={pdfUrl} 
+                    target="_blank" 
+                    rel="noreferrer"
+                    className="pixel-btn-blue text-[9px] font-pixel uppercase mt-2 inline-block px-4 py-2"
+                  >
+                    OPEN / DOWNLOAD DATA
+                  </a>
                 </div>
               </object>
             ) : imageUrl ? (
