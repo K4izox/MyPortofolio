@@ -170,7 +170,8 @@ export const CERTIFICATES_LIST: Certificate[] = [
     issuer: "BSSN (Badan Siber dan Sandi Negara)",
     year: "2025",
     badgeType: "diamond",
-    color: "red"
+    color: "red",
+    imageUrl: "/images/certificates/Cybersecurity Literacy Training.jpeg"
   },
   {
     id: "cert-02",
@@ -178,7 +179,8 @@ export const CERTIFICATES_LIST: Certificate[] = [
     issuer: "AWS (Amazon Web Services)",
     year: "2025",
     badgeType: "diamond",
-    color: "blue"
+    color: "blue",
+    imageUrl: "/images/certificates/Implementasi Keamanan Siber bagi BUMN di AWS (Bahasa Indonesia).jpeg"
   },
   {
     id: "cert-03",
@@ -186,7 +188,8 @@ export const CERTIFICATES_LIST: Certificate[] = [
     issuer: "AWS (Amazon Web Services)",
     year: "2025",
     badgeType: "gold",
-    color: "blue"
+    color: "blue",
+    imageUrl: "/images/certificates/AWS Security Fundamentals Second Edition (Bahasa Indonesia).jpeg"
   },
   {
     id: "cert-04",
@@ -194,7 +197,8 @@ export const CERTIFICATES_LIST: Certificate[] = [
     issuer: "AWS (Amazon Web Services)",
     year: "2025",
     badgeType: "silver",
-    color: "yellow"
+    color: "yellow",
+    imageUrl: "/images/certificates/Introduction to Generative AI - Art of the Possible (Bahasa Indonesia).jpeg"
   },
   {
     id: "cert-05",
@@ -202,7 +206,8 @@ export const CERTIFICATES_LIST: Certificate[] = [
     issuer: "CODEPOLITAN",
     year: "2026",
     badgeType: "gold",
-    color: "green"
+    color: "green",
+    imageUrl: "/images/certificates/Basic CyberSecurity.jpeg"
   },
   {
     id: "cert-06",
@@ -210,7 +215,8 @@ export const CERTIFICATES_LIST: Certificate[] = [
     issuer: "Hacktiv8",
     year: "2026",
     badgeType: "gold",
-    color: "yellow"
+    color: "yellow",
+    imageUrl: "/images/certificates/AI Productivity and AI API Integration for Developers.jpeg"
   },
   {
     id: "cert-07",
@@ -218,7 +224,8 @@ export const CERTIFICATES_LIST: Certificate[] = [
     issuer: "IBM",
     year: "2026",
     badgeType: "silver",
-    color: "red"
+    color: "red",
+    imageUrl: "/images/certificates/Introduction to Large Language Models.jpeg"
   },
   {
     id: "cert-08",
@@ -226,7 +233,8 @@ export const CERTIFICATES_LIST: Certificate[] = [
     issuer: "IBM",
     year: "2026",
     badgeType: "diamond",
-    color: "red"
+    color: "red",
+    imageUrl: "/images/certificates/Build an AI Agent.jpeg"
   },
   {
     id: "cert-09",
