@@ -241,40 +241,67 @@ function PortfolioApp({ laravelVersion, phpVersion, guestbookEntries = [] }: Pro
       </section>
 
       {/* Mini Game Area */}
-      <section id="game" className="py-20 bg-white border-b-4 border-black relative">
+      <section id="game" className="py-20 bg-white border-b-4 border-black relative overflow-hidden">
         <div className="absolute inset-0 pixel-grid-bg opacity-30 pointer-events-none"></div>
         <div className="max-w-4xl mx-auto px-4 relative z-10 text-center">
-          <h2 className="font-pixel text-lg text-gray-900 mb-6 inline-block bg-[#FBBC05] px-4 py-2 pixel-border-sm pixel-shadow-yellow transform -rotate-1">
+          <h2 className="font-pixel text-lg text-gray-900 mb-8 inline-block bg-[#FBBC05] px-4 py-2 pixel-border-sm pixel-shadow-yellow transform -rotate-1 relative z-20">
             [ MINI GAME AREA ]
           </h2>
           
-          {/* Game Switcher Tabs */}
-          <div className="flex justify-center items-center gap-4 mb-8">
-            <button
-              onClick={() => { playClickSound(); setActiveGame("dino"); }}
-              onMouseEnter={playHoverSound}
-              className={`px-4 py-2 font-pixel text-[10px] uppercase tracking-wider pixel-border transition-all ${
-                activeGame === "dino" 
-                  ? "bg-[#4285F4] text-white pixel-shadow-blue scale-105" 
-                  : "bg-white text-gray-500 hover:bg-gray-100"
-              }`}
-            >
-              T-Rex Run
-            </button>
-            <button
-              onClick={() => { playClickSound(); setActiveGame("snake"); }}
-              onMouseEnter={playHoverSound}
-              className={`px-4 py-2 font-pixel text-[10px] uppercase tracking-wider pixel-border transition-all ${
-                activeGame === "snake" 
-                  ? "bg-[#34A853] text-white pixel-shadow-green scale-105" 
-                  : "bg-white text-gray-500 hover:bg-gray-100"
-              }`}
-            >
-              Bug Hunter
-            </button>
-          </div>
+          {/* Arcade Cabinet Wrapper */}
+          <div className="arcade-cabinet max-w-2xl mx-auto mt-4 mb-4">
+            
+            {/* Arcade Header (LEDs and Coin Slot) */}
+            <div className="flex justify-between items-center mb-6 px-2 sm:px-6">
+               <div className="flex gap-2 sm:gap-3">
+                 <div className="w-3 h-3 rounded-full bg-red-500 shadow-[0_0_8px_#EF4444] animate-pulse"></div>
+                 <div className="w-3 h-3 rounded-full bg-yellow-400 shadow-[0_0_8px_#FACC15]"></div>
+                 <div className="w-3 h-3 rounded-full bg-green-500 shadow-[0_0_8px_#22C55E]"></div>
+               </div>
+               <div className="font-pixel text-[8px] sm:text-[10px] text-yellow-300 tracking-widest bg-black px-3 py-1.5 border-2 border-red-900 rounded shadow-inner animate-coin">
+                 INSERT COIN
+               </div>
+            </div>
 
-          {activeGame === "dino" ? <DinoGame /> : <SnakeGame />}
+            {/* Game Switcher Tabs (Dashboard) */}
+            <div className="flex justify-center items-center gap-3 sm:gap-6 mb-6">
+              <button
+                onClick={() => { playClickSound(); setActiveGame("dino"); }}
+                onMouseEnter={playHoverSound}
+                className={`px-4 py-2 font-pixel text-[9px] sm:text-[10px] uppercase tracking-wider pixel-border transition-all ${
+                  activeGame === "dino" 
+                    ? "bg-[#4285F4] text-white pixel-shadow-flat-blue scale-105" 
+                    : "bg-gray-200 text-gray-500 hover:bg-white"
+                }`}
+              >
+                T-Rex Run
+              </button>
+              <button
+                onClick={() => { playClickSound(); setActiveGame("snake"); }}
+                onMouseEnter={playHoverSound}
+                className={`px-4 py-2 font-pixel text-[9px] sm:text-[10px] uppercase tracking-wider pixel-border transition-all ${
+                  activeGame === "snake" 
+                    ? "bg-[#34A853] text-white pixel-shadow-flat-green scale-105" 
+                    : "bg-gray-200 text-gray-500 hover:bg-white"
+                }`}
+              >
+                Bug Hunter
+              </button>
+            </div>
+
+            {/* Arcade Screen Bezel */}
+            <div className="arcade-screen-bezel">
+              <div className="crt-convex">
+                {activeGame === "dino" ? <DinoGame /> : <SnakeGame />}
+              </div>
+            </div>
+
+            {/* Arcade Control Panel Decor */}
+            <div className="mt-8 mb-2 flex justify-center gap-12 px-4 opacity-70">
+              <div className="w-20 h-3 bg-red-950 rounded-full shadow-inner border border-red-900"></div>
+              <div className="w-20 h-3 bg-red-950 rounded-full shadow-inner border border-red-900"></div>
+            </div>
+          </div>
         </div>
       </section>
 
