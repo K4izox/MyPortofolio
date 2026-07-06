@@ -247,20 +247,20 @@ export default function DinoGame() {
     <div className="w-full max-w-xl mx-auto p-4">
       {/* Game Header */}
       <div className="flex items-center justify-between mb-2">
-        <div className="flex items-center gap-1">
+        <div className="flex items-center gap-2">
           <span className="w-3 h-3 bg-[#34A853] inline-block pixel-border-sm animate-pulse"></span>
-          <h4 className="text-[10px] font-pixel text-gray-700 tracking-wider">DINO GOOGLE EASTER EGG</h4>
+          <h4 className="text-[10px] font-pixel text-green-400 tracking-wider">DINO GOOGLE EASTER EGG</h4>
         </div>
         <div className="flex items-center gap-3">
           <button
             onClick={() => setIsMuted(!isMuted)}
-            className="p-1 text-gray-500 hover:text-black border-2 border-transparent hover:border-black active:translate-y-0.5"
+            className="p-1 text-gray-400 hover:text-white border-2 border-transparent hover:border-green-400 active:translate-y-0.5 transition-colors"
             title={isMuted ? "Unmute" : "Mute"}
           >
             {isMuted ? <VolumeX size={16} /> : <Volume2 size={16} />}
           </button>
-          <div className="text-[10px] font-pixel text-gray-600">
-            HI: <span className="font-mono text-xs">{highScore.toString().padStart(4, "0")}</span>
+          <div className="text-[10px] font-pixel text-gray-400">
+            HI: <span className="font-mono text-xs text-green-400">{highScore.toString().padStart(4, "0")}</span>
           </div>
         </div>
       </div>
