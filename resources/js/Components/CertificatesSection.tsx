@@ -2,9 +2,13 @@ import React, { useState } from "react";
 import { CERTIFICATES_LIST, Certificate } from "../types";
 import { Award, ShieldAlert, Sparkles, BookOpen, Layers } from "lucide-react";
 import TypewriterHeading from "./TypewriterHeading";
+import { useAudio } from "../hooks/useAudio";
+import CrtModal from "./CrtModal";
 
 export default function CertificatesSection() {
   const [filter, setFilter] = useState<"all" | "aws" | "google" | "ibm" | "others">("all");
+  const [selectedCert, setSelectedCert] = useState<Certificate | null>(null);
+  const { playHoverSound, playClickSound } = useAudio();
 
   const filteredCerts = CERTIFICATES_LIST.filter((cert) => {
     if (filter === "all") return true;
@@ -191,7 +195,12 @@ export default function CertificatesSection() {
             return (
               <div
                 key={cert.id}
-                className="bg-white pixel-border p-5 flex flex-col justify-between hover:-translate-y-1 transition-all duration-150 pixel-shadow"
+                onClick={() => {
+                  playClickSound();
+                  setSelectedCert(cert);
+                }}
+                onMouseEnter={playHoverSound}
+                className="bg-white pixel-border p-5 flex flex-col justify-between hover:-translate-y-1 transition-all duration-150 pixel-shadow cursor-pointer"
               >
                 {/* Badge Visual and Title */}
                 <div>
@@ -241,6 +250,16 @@ export default function CertificatesSection() {
           </div>
         )}
       </div>
+
+      {/* Retro CRT Modal for Certificate Detail */}
+      <CrtModal 
+        isOpen={!!selectedCert}
+        onClose={() => setSelectedCert(null)}
+        title={selectedCert?.title || ""}
+        description={selectedCert?.description}
+        imageUrl={selectedCert?.imageUrl}
+        badgeType={selectedCert?.badgeType}
+      />
     </section>
   );
 }

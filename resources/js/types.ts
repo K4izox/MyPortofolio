@@ -31,6 +31,8 @@ export interface Certificate {
   year: string;
   badgeType: "bronze" | "silver" | "gold" | "diamond";
   color: "blue" | "red" | "yellow" | "green";
+  imageUrl?: string;
+  description?: string;
 }
 
 export const OWNER_DATA = {
@@ -299,6 +301,7 @@ export interface Project {
   techStack: string[];
   demoUrl?: string;
   githubUrl?: string;
+  imageUrl?: string;
 }
 
 export const PROJECTS_LIST: Project[] = [

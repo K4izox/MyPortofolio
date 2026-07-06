@@ -1,11 +1,13 @@
-import React from "react";
-import { PROJECTS_LIST } from "../types";
+import React, { useState } from "react";
+import { PROJECTS_LIST, Project } from "../types";
 import { ExternalLink, Github, Gamepad2 } from "lucide-react";
 import { useAudio } from "../hooks/useAudio";
 import TypewriterHeading from "./TypewriterHeading";
+import CrtModal from "./CrtModal";
 
 export default function ProjectsSection() {
   const { playHoverSound, playClickSound } = useAudio();
+  const [selectedProject, setSelectedProject] = useState<Project | null>(null);
 
   const getGoogleColorHex = (color: string) => {
     switch (color) {
@@ -51,7 +53,12 @@ export default function ProjectsSection() {
           {PROJECTS_LIST.map((project) => (
             <div 
               key={project.id}
-              className={`bg-white pixel-border flex flex-col transition-transform duration-200 hover:-translate-y-2 group ${getShadowStyle(project.imageColor)}`}
+              onClick={() => {
+                playClickSound();
+                setSelectedProject(project);
+              }}
+              onMouseEnter={playHoverSound}
+              className={`bg-white pixel-border flex flex-col transition-transform duration-200 hover:-translate-y-2 group cursor-pointer ${getShadowStyle(project.imageColor)}`}
             >
               {/* Project Image Placeholder / Cartridge Art */}
               <div 
@@ -95,13 +102,17 @@ export default function ProjectsSection() {
                   <a
                     href={project.demoUrl}
                     onClick={(e) => {
+                      e.stopPropagation(); // prevent modal opening
                       playClickSound();
                       if (project.demoUrl === "#") {
                         e.preventDefault();
                         alert(`Demo untuk "${project.title}" belum tersedia saat ini.`);
                       }
                     }}
-                    onMouseEnter={playHoverSound}
+                    onMouseEnter={(e) => {
+                      e.stopPropagation();
+                      playHoverSound();
+                    }}
                     className="flex-1 pixel-btn-blue text-[8px] font-pixel text-center py-2 flex justify-center items-center gap-1.5"
                   >
                     <ExternalLink size={10} /> PLAY DEMO
@@ -109,13 +120,17 @@ export default function ProjectsSection() {
                   <a
                     href={project.githubUrl}
                     onClick={(e) => {
+                      e.stopPropagation(); // prevent modal opening
                       playClickSound();
                       if (project.githubUrl === "#") {
                         e.preventDefault();
                         alert(`Source code "${project.title}" bersifat privat atau belum dipublikasikan.`);
                       }
                     }}
-                    onMouseEnter={playHoverSound}
+                    onMouseEnter={(e) => {
+                      e.stopPropagation();
+                      playHoverSound();
+                    }}
                     className="w-10 pixel-btn-white text-[8px] font-pixel flex justify-center items-center py-2"
                     title="View Source Code"
                   >
@@ -127,6 +142,15 @@ export default function ProjectsSection() {
           ))}
         </div>
       </div>
+
+      {/* Retro CRT Modal for Project Detail */}
+      <CrtModal 
+        isOpen={!!selectedProject}
+        onClose={() => setSelectedProject(null)}
+        title={selectedProject?.title || ""}
+        description={selectedProject?.description}
+        imageUrl={selectedProject?.imageUrl}
+      />
     </section>
   );
 }
