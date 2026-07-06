@@ -392,6 +392,7 @@ export const PROJECTS_LIST: Project[] = [
     imageColor: "yellow",
     techStack: ["Laravel", "React", "Inertia", "Tailwind CSS"],
     demoUrl: "https://my-portofolio-tau-nine.vercel.app",
-    githubUrl: "https://github.com/K4izox/MyPortofolio"
+    githubUrl: "https://github.com/K4izox/MyPortofolio",
+    imageUrl: "/images/projects/portofolio.png"
   }
 ];
