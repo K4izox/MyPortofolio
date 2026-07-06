@@ -314,5 +314,22 @@ export const PROJECTS_LIST: Project[] = [
     demoUrl: "https://lnkd.in/gb7wYuqw",
     githubUrl: "#",
     imageUrl: "/images/projects/Demeter.png"
+  },
+  {
+    id: "proj-2",
+    title: "Grawizah (AI Trade Intelligence)",
+    description: "AI-native Trade Intelligence Platform untuk UMKM Indonesia. Memiliki fitur neural matchmaking, automated HS-coding, dan real-time supply chain mapping.",
+    imageColor: "blue",
+    techStack: ["Next.js", "Go", "AI Assistant"],
+    demoUrl: "https://grawizah-com.vercel.app/",
+    githubUrl: "https://github.com/wi5nuu/grawizah.com"
+  },
+  {
+    id: "proj-3",
+    title: "Nova AI (Intelligent Chat Assistant)",
+    description: "Asisten chatbot cerdas berbasis AI (Nova AI) yang dibangun menggunakan backend Flask dan integrasi langsung dengan Gemini API.",
+    imageColor: "red",
+    techStack: ["Python", "Flask", "Gemini API"],
+    githubUrl: "https://github.com/K4izox/HACKTIV8-Project"
   }
 ];
