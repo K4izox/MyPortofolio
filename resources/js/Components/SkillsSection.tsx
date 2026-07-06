@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { SKILLS_INVENTORY, Skill } from "../types";
-import { Code, Sparkles, Terminal, ShieldAlert, Palette, Compass, Users } from "lucide-react";
+import { Code, Sparkles, Terminal, ShieldAlert, Palette, Compass, Users, Database } from "lucide-react";
 import TypewriterHeading from "./TypewriterHeading";
 
 // Map string icon names to Lucide icon components
@@ -12,6 +12,7 @@ const iconMap: Record<string, React.ComponentType<any>> = {
   Palette,
   Compass,
   Users,
+  Database,
 };
 
 export default function SkillsSection() {
@@ -85,7 +86,7 @@ export default function SkillsSection() {
             <div className="flex items-center justify-between border-b-4 border-black pb-3 mb-6">
               <span className="font-pixel text-[10px] text-gray-700">REZA'S EXP BACKPACK</span>
               <span className="font-mono text-xs font-bold bg-white px-2 py-0.5 border-2 border-black">
-                SLOTS: {SKILLS_INVENTORY.length}/9
+                SLOTS: {SKILLS_INVENTORY.length}/12
               </span>
             </div>
 

@@ -102,6 +102,41 @@ export const SKILLS_INVENTORY: Skill[] = [
     icon: "Users",
     googleColor: "green",
     description: "Kolaborasi aktif, manajemen proyek, empati tim, dan komunikasi efektif dalam lingkungan agile."
+  },
+  {
+    name: "PHP & Laravel",
+    rarity: "Epic",
+    icon: "Code",
+    googleColor: "blue",
+    description: "Membangun sistem backend robust menggunakan PHP, framework Laravel, serta ekosistem server XAMPP."
+  },
+  {
+    name: "JavaScript / TS",
+    rarity: "Epic",
+    icon: "Code",
+    googleColor: "yellow",
+    description: "Pengembangan web interaktif dan dinamis menggunakan modern framework JavaScript/TypeScript (React, Next.js)."
+  },
+  {
+    name: "Golang (Go)",
+    rarity: "Rare",
+    icon: "Terminal",
+    googleColor: "blue",
+    description: "Pemrograman backend berkinerja tinggi, concurrent, dan scalable menggunakan bahasa Go."
+  },
+  {
+    name: "Python",
+    rarity: "Epic",
+    icon: "Terminal",
+    googleColor: "green",
+    description: "Scripting, otomasi, analisis data, dan integrasi Artificial Intelligence / Machine Learning menggunakan Python."
+  },
+  {
+    name: "PostgreSQL & DB",
+    rarity: "Epic",
+    icon: "Database",
+    googleColor: "red",
+    description: "Manajemen basis data relasional, desain skema, dan optimasi query menggunakan PostgreSQL dan MySQL."
   }
 ];
 
