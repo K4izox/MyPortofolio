@@ -173,13 +173,12 @@ export default function PixelAvatar() {
         {/* Real Photo Reveal or 16x16 Pixel Grid SVG */}
         <div className="relative w-48 h-48 sm:w-56 sm:h-56 bg-white overflow-hidden">
           {isHovering && !isSuper ? (
-            <div className="w-full h-full relative crt-effect animate-in fade-in zoom-in duration-200">
-              <div className="w-full h-full bg-[#4285F4] bg-opacity-20 animate-pulse absolute inset-0 z-10 pointer-events-none mix-blend-overlay"></div>
+            <div className="w-full h-full relative crt-effect animate-in fade-in zoom-in duration-200 bg-black flex items-center justify-center">
               <img 
                 key={mode} // Force re-render animation on mode change
                 src={getProfileImage()} 
                 alt={`Reza Fahlevi - ${mode}`}
-                className="w-full h-full object-cover object-top grayscale-[20%] contrast-125 animate-in fade-in duration-300"
+                className="w-full h-full object-contain animate-in fade-in duration-300"
                 onError={(e) => { 
                   // Fallback to default profile if the specific mode photo hasn't been uploaded yet
                   const target = e.currentTarget;
