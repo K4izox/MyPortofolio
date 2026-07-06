@@ -297,7 +297,8 @@ export const CERTIFICATES_LIST: Certificate[] = [
     issuer: "Google",
     year: "2026",
     badgeType: "diamond",
-    color: "blue"
+    color: "blue",
+    pdfUrl: "/images/certificates/Coursera Google AI.pdf"
   }
 ];
 
