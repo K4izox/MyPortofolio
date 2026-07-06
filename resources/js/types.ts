@@ -342,6 +342,15 @@ export const CERTIFICATES_LIST: Certificate[] = [
     badgeType: "diamond",
     color: "blue",
     pdfUrl: "/images/certificates/Coursera Google AI.pdf"
+  },
+  {
+    id: "cert-coming-soon",
+    title: "??? (CLASSIFIED DATA)",
+    issuer: "UNKNOWN",
+    year: "202X",
+    badgeType: "bronze",
+    color: "red",
+    description: "New achievement is currently being processed. Stay tuned for the next level up!"
   }
 ];
 
@@ -394,5 +403,12 @@ export const PROJECTS_LIST: Project[] = [
     demoUrl: "https://my-portofolio-tau-nine.vercel.app",
     githubUrl: "https://github.com/K4izox/MyPortofolio",
     imageUrl: "/images/projects/portofolio.png"
+  },
+  {
+    id: "proj-coming-soon",
+    title: "CLASSIFIED PROJECT",
+    description: ">>> LOADING NEXT BIG THING... \nProyek rahasia sedang dalam tahap pengembangan (Under Construction). Bersiaplah untuk inovasi berikutnya!",
+    imageColor: "red",
+    techStack: ["???", "Top Secret", "In Development"]
   }
 ];
