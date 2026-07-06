@@ -339,7 +339,8 @@ export const PROJECTS_LIST: Project[] = [
     imageColor: "blue",
     techStack: ["Next.js", "Go", "AI Assistant"],
     demoUrl: "https://grawizah-com.vercel.app/",
-    githubUrl: "https://github.com/wi5nuu/grawizah.com"
+    githubUrl: "https://github.com/wi5nuu/grawizah.com",
+    imageUrl: "/images/projects/Grawizah.png"
   },
   {
     id: "proj-3",
