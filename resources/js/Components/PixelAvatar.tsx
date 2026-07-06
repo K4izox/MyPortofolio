@@ -145,7 +145,11 @@ export default function PixelAvatar() {
     <div className="flex flex-col items-center animate-float">
       {/* Visual Frame */}
       <div 
-        onClick={handleAvatarClick}
+        onClick={() => {
+          handleAvatarClick();
+          // Toggle hover state for mobile devices
+          setIsHovering(!isHovering);
+        }}
         onMouseEnter={() => { playHoverSound(); setIsHovering(true); }}
         onMouseLeave={() => setIsHovering(false)}
         className={`relative p-4 pixel-border inline-block bg-opacity-95 cursor-pointer select-none transition-all duration-300 ${isSuper ? 'bg-[#FBBC05] pixel-shadow-yellow scale-110' : 'bg-white pixel-shadow-blue hover:scale-105 active:scale-95'}`}
