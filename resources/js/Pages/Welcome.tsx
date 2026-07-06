@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import Navbar from "../Components/Navbar";
 import PixelAvatar from "../Components/PixelAvatar";
 import DinoGame from "../Components/DinoGame";
+import SnakeGame from "../Components/SnakeGame";
 import SkillsSection from "../Components/SkillsSection";
 import ExperienceSection from "../Components/ExperienceSection";
 import EducationSection from "../Components/EducationSection";
@@ -41,6 +42,7 @@ export default function App(props: Props) {
 
 function PortfolioApp({ laravelVersion, phpVersion, guestbookEntries = [] }: Props) {
   const [activeSection, setActiveSection] = useState("about");
+  const [activeGame, setActiveGame] = useState<"dino" | "snake">("dino");
   const [showSplash, setShowSplash] = useState(true);
   const [isTerminalOpen, setIsTerminalOpen] = useState(false);
   const isHackerMode = useKonamiCode();
@@ -238,14 +240,41 @@ function PortfolioApp({ laravelVersion, phpVersion, guestbookEntries = [] }: Pro
         <CertificatesSection />
       </section>
 
-      {/* Hidden Dino Game Area */}
+      {/* Mini Game Area */}
       <section id="game" className="py-20 bg-white border-b-4 border-black relative">
         <div className="absolute inset-0 pixel-grid-bg opacity-30 pointer-events-none"></div>
         <div className="max-w-4xl mx-auto px-4 relative z-10 text-center">
-          <h2 className="font-pixel text-lg text-gray-900 mb-8 inline-block bg-[#FBBC05] px-4 py-2 pixel-border-sm pixel-shadow-yellow transform -rotate-1">
+          <h2 className="font-pixel text-lg text-gray-900 mb-6 inline-block bg-[#FBBC05] px-4 py-2 pixel-border-sm pixel-shadow-yellow transform -rotate-1">
             [ MINI GAME AREA ]
           </h2>
-          <DinoGame />
+          
+          {/* Game Switcher Tabs */}
+          <div className="flex justify-center items-center gap-4 mb-8">
+            <button
+              onClick={() => { playClickSound(); setActiveGame("dino"); }}
+              onMouseEnter={playHoverSound}
+              className={`px-4 py-2 font-pixel text-[10px] uppercase tracking-wider pixel-border transition-all ${
+                activeGame === "dino" 
+                  ? "bg-[#4285F4] text-white pixel-shadow-blue scale-105" 
+                  : "bg-white text-gray-500 hover:bg-gray-100"
+              }`}
+            >
+              T-Rex Run
+            </button>
+            <button
+              onClick={() => { playClickSound(); setActiveGame("snake"); }}
+              onMouseEnter={playHoverSound}
+              className={`px-4 py-2 font-pixel text-[10px] uppercase tracking-wider pixel-border transition-all ${
+                activeGame === "snake" 
+                  ? "bg-[#34A853] text-white pixel-shadow-green scale-105" 
+                  : "bg-white text-gray-500 hover:bg-gray-100"
+              }`}
+            >
+              Bug Hunter
+            </button>
+          </div>
+
+          {activeGame === "dino" ? <DinoGame /> : <SnakeGame />}
         </div>
       </section>
 
