@@ -35,6 +35,7 @@ export default function DinoGame() {
   const dinoRef = useRef<HTMLDivElement>(null);
   const obstacleRef = useRef<HTMLDivElement>(null);
   const cloudRefs = useRef<(HTMLDivElement | null)[]>([]);
+  const scoreDisplayRef = useRef<HTMLSpanElement>(null);
 
   // Keep ref in sync with state for collision logic
   useEffect(() => {
@@ -140,6 +141,12 @@ export default function DinoGame() {
     isJumpingRef.current = false;
     
     if (animFrameId.current) cancelAnimationFrame(animFrameId.current);
+    
+    // Reset DOM score display
+    if (scoreDisplayRef.current) {
+      scoreDisplayRef.current.innerText = "0000";
+    }
+
     animFrameId.current = requestAnimationFrame(gameLoop);
   };
 
@@ -167,8 +174,8 @@ export default function DinoGame() {
       
       // Update score safely without triggering full lag
       scoreRef.current += 10;
-      if (scoreRef.current % 50 === 0) {
-        setScore(scoreRef.current); // Sync react state occasionally for UI
+      if (scoreDisplayRef.current) {
+        scoreDisplayRef.current.innerText = scoreRef.current.toString().padStart(4, "0");
       }
       
       if (scoreRef.current > 0 && scoreRef.current % 100 === 0) {
@@ -259,8 +266,13 @@ export default function DinoGame() {
           >
             {isMuted ? <VolumeX size={16} /> : <Volume2 size={16} />}
           </button>
-          <div className="text-[10px] font-pixel text-gray-400">
-            HI: <span className="font-mono text-xs text-green-400">{highScore.toString().padStart(4, "0")}</span>
+          <div className="text-[10px] font-pixel text-gray-400 flex gap-4">
+            <span>
+              SCORE: <span ref={scoreDisplayRef} className="font-mono text-xs text-white">{Math.max(score, scoreRef.current).toString().padStart(4, "0")}</span>
+            </span>
+            <span>
+              HI: <span className="font-mono text-xs text-green-400">{highScore.toString().padStart(4, "0")}</span>
+            </span>
           </div>
         </div>
       </div>
@@ -410,12 +422,7 @@ export default function DinoGame() {
           </div>
         )}
 
-        {/* Real-time score indicator */}
-        {isPlaying && (
-          <div className="absolute top-2 right-4 text-xs font-mono font-semibold bg-white px-2 py-1 pixel-border-sm opacity-90">
-            SCORE: {Math.max(score, scoreRef.current).toString().padStart(4, "0")}
-          </div>
-        )}
+        {/* Real-time score indicator removed from here to improve visibility */}
       </div>
 
       <p className="mt-2 text-center text-[10px] font-mono text-gray-500">
