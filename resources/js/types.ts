@@ -32,6 +32,7 @@ export interface Certificate {
   badgeType: "bronze" | "silver" | "gold" | "diamond";
   color: "blue" | "red" | "yellow" | "green";
   imageUrl?: string;
+  pdfUrl?: string;
   description?: string;
 }
 
@@ -233,7 +234,8 @@ export const CERTIFICATES_LIST: Certificate[] = [
     issuer: "Google",
     year: "2026",
     badgeType: "gold",
-    color: "green"
+    color: "green",
+    pdfUrl: "/images/certificates/Coursera AI Fundamentals.pdf"
   },
   {
     id: "cert-10",
@@ -241,7 +243,8 @@ export const CERTIFICATES_LIST: Certificate[] = [
     issuer: "Google",
     year: "2026",
     badgeType: "silver",
-    color: "blue"
+    color: "blue",
+    pdfUrl: "/images/certificates/Coursera AI for Brainstorming and Planning.pdf"
   },
   {
     id: "cert-11",
@@ -249,7 +252,8 @@ export const CERTIFICATES_LIST: Certificate[] = [
     issuer: "Google",
     year: "2026",
     badgeType: "silver",
-    color: "blue"
+    color: "blue",
+    pdfUrl: "/images/certificates/Coursera AI for Research and Insights.pdf"
   },
   {
     id: "cert-12",
@@ -257,7 +261,8 @@ export const CERTIFICATES_LIST: Certificate[] = [
     issuer: "Google",
     year: "2026",
     badgeType: "silver",
-    color: "blue"
+    color: "blue",
+    pdfUrl: "/images/certificates/Coursera AI for Writing and Communicating.pdf"
   },
   {
     id: "cert-13",
@@ -265,7 +270,8 @@ export const CERTIFICATES_LIST: Certificate[] = [
     issuer: "Google",
     year: "2026",
     badgeType: "silver",
-    color: "blue"
+    color: "blue",
+    pdfUrl: "/images/certificates/Coursera AI for Content Creation.pdf"
   },
   {
     id: "cert-14",
@@ -273,7 +279,8 @@ export const CERTIFICATES_LIST: Certificate[] = [
     issuer: "Google",
     year: "2026",
     badgeType: "gold",
-    color: "blue"
+    color: "blue",
+    pdfUrl: "/images/certificates/Coursera AI for Data Analysis.pdf"
   },
   {
     id: "cert-15",
@@ -281,7 +288,8 @@ export const CERTIFICATES_LIST: Certificate[] = [
     issuer: "Google",
     year: "2026",
     badgeType: "gold",
-    color: "blue"
+    color: "blue",
+    pdfUrl: "/images/certificates/Coursera AI for App Building.pdf"
   },
   {
     id: "cert-16",

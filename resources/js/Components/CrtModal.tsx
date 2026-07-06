@@ -9,10 +9,11 @@ interface CrtModalProps {
   title: string;
   description?: string;
   imageUrl?: string;
+  pdfUrl?: string;
   badgeType?: string; // for certificates
 }
 
-export default function CrtModal({ isOpen, onClose, title, description, imageUrl, badgeType }: CrtModalProps) {
+export default function CrtModal({ isOpen, onClose, title, description, imageUrl, pdfUrl, badgeType }: CrtModalProps) {
   const { playClickSound } = useAudio();
   const { displayedText } = useTypewriter(description || "", 30);
 
@@ -89,9 +90,18 @@ export default function CrtModal({ isOpen, onClose, title, description, imageUrl
             )}
           </div>
 
-          {/* Image Area */}
+          {/* Image/PDF Area */}
           <div className="w-full bg-black border-2 border-[#333] p-1 relative flex items-center justify-center min-h-[200px] sm:min-h-[300px] overflow-hidden group">
-            {imageUrl ? (
+            {pdfUrl ? (
+              <object data={pdfUrl} type="application/pdf" className="w-full min-h-[300px] sm:h-[400px]">
+                <div className="flex flex-col items-center justify-center text-gray-600 gap-2 h-full p-4">
+                  <span className="font-pixel text-[10px] uppercase text-center leading-relaxed">
+                    PDF VIEWER NOT SUPPORTED.<br/><br/>
+                    <a href={pdfUrl} target="_blank" className="text-[#34A853] underline hover:text-white">DOWNLOAD DATA</a>
+                  </span>
+                </div>
+              </object>
+            ) : imageUrl ? (
               <img 
                 src={imageUrl} 
                 alt={title} 
@@ -105,7 +115,7 @@ export default function CrtModal({ isOpen, onClose, title, description, imageUrl
             )}
             
             {/* CRT Image Filter (can be customized via CSS or removed if clear is wanted) */}
-            {imageUrl && (
+            {(imageUrl || pdfUrl) && (
               <div className="absolute inset-0 bg-[#34A853] mix-blend-overlay opacity-10 pointer-events-none group-hover:opacity-0 transition-opacity"></div>
             )}
           </div>

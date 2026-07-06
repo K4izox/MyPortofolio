@@ -258,6 +258,7 @@ export default function CertificatesSection() {
         title={selectedCert?.title || ""}
         description={selectedCert?.description}
         imageUrl={selectedCert?.imageUrl}
+        pdfUrl={selectedCert?.pdfUrl}
         badgeType={selectedCert?.badgeType}
       />
     </section>
