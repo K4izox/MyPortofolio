@@ -167,13 +167,13 @@ export const EXPERIENCE_TIMELINE: Experience[] = [
   {
     level: 1,
     role: "Member",
-    organization: "President University Robotics & Technology Club",
-    period: "2024 – Present",
+    organization: "President University Robotics and Technology Club",
+    period: "Nov 2024 – Present",
     color: "red",
     description: [
-      "Studying embedded systems programming (Arduino, Raspberry Pi) and electrical circuits.",
-      "Contributing to the research of smart robotics prototypes based on microcontrollers.",
-      "Exploring the integration of IoT security sensors and cloud storage."
+      "Engaging with a student community focused on developing skills and knowledge in robotics and technology.",
+      "Collaborating with peers to innovate and apply technical knowledge to real-world projects.",
+      "Actively participating in workshops, seminars, and training sessions covering diverse topics, from robot programming to artificial intelligence, to build readiness as an innovator in the ever-evolving tech industry."
     ]
   }
 ];
