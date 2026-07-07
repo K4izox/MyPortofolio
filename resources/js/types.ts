@@ -423,7 +423,7 @@ export const PROJECTS_LIST: Project[] = [
     description: "Platform pendakian ekologis berbasis AI dengan fitur Scanner Bawaan Zero-Waste, Live Weather, dan Community Trail Reports.",
     imageColor: "green",
     techStack: ["React", "Gemini API", "Tailwind", "Google AI Studio"],
-    demoUrl: "https://lnkd.in/gb7wYuqw",
+    demoUrl: "https://demeter-cinematic-hero-533806768391.asia-southeast1.run.app/",
     githubUrl: "#",
     imageUrl: "/images/projects/Demeter.png"
   },
