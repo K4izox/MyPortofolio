@@ -420,7 +420,7 @@ export const PROJECTS_LIST: Project[] = [
   {
     id: "proj-1",
     title: "Demeter (Eco-Hiking AI)",
-    description: "Platform pendakian ekologis berbasis AI dengan fitur Scanner Bawaan Zero-Waste, Live Weather, dan Community Trail Reports.",
+    description: "AI-based ecological hiking platform featuring an integrated Zero-Waste Scanner, Live Weather updates, and Community Trail Reports.",
     imageColor: "green",
     techStack: ["React", "Gemini API", "Tailwind", "Google AI Studio"],
     demoUrl: "https://demeter-cinematic-hero-533806768391.asia-southeast1.run.app/",
@@ -430,7 +430,7 @@ export const PROJECTS_LIST: Project[] = [
   {
     id: "proj-2",
     title: "Grawizah (AI Trade Intelligence)",
-    description: "AI-native Trade Intelligence Platform untuk UMKM Indonesia. Memiliki fitur neural matchmaking, automated HS-coding, dan real-time supply chain mapping.",
+    description: "AI-native Trade Intelligence Platform for Indonesian SMEs. Features neural matchmaking, automated HS-coding, and real-time supply chain mapping.",
     imageColor: "blue",
     techStack: ["Next.js", "Go", "AI Assistant"],
     demoUrl: "https://grawizah-com.vercel.app/",
@@ -440,7 +440,7 @@ export const PROJECTS_LIST: Project[] = [
   {
     id: "proj-3",
     title: "Nova AI (Intelligent Chat Assistant)",
-    description: "Asisten chatbot cerdas berbasis AI (Nova AI) yang dibangun menggunakan backend Flask dan integrasi langsung dengan Gemini API.",
+    description: "Intelligent AI chatbot assistant built using a Flask backend and direct integration with the Gemini API.",
     imageColor: "red",
     techStack: ["Python", "Flask", "Gemini API"],
     githubUrl: "https://github.com/K4izox/HACKTIV8-Project"
@@ -448,7 +448,7 @@ export const PROJECTS_LIST: Project[] = [
   {
     id: "proj-4",
     title: "Pixel Portfolio (Reza.exe)",
-    description: "Portofolio interaktif bergaya 8-bit retro yang sedang Anda lihat ini! Dilengkapi dengan Mini Games (Mesin Arcade), Hacker Terminal tersembunyi, dan Guestbook.",
+    description: "The 8-bit retro-style interactive portfolio you are viewing right now! Equipped with Arcade Mini Games, a hidden Hacker Terminal, and a Guestbook.",
     imageColor: "yellow",
     techStack: ["Laravel", "React", "Inertia", "Tailwind CSS"],
     demoUrl: "https://my-portofolio-tau-nine.vercel.app",

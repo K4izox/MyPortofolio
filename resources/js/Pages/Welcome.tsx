@@ -75,7 +75,7 @@ function PortfolioApp({ laravelVersion, phpVersion, guestbookEntries = [] }: Pro
         unlock({
           id: 'curious_explorer',
           title: 'Curious Explorer',
-          description: 'Membaca portofolio sampai ke ujung bawah dunia pixel!'
+          description: 'Read the portfolio all the way to the bottom of the pixel world!'
         });
       }
     };
@@ -90,7 +90,7 @@ function PortfolioApp({ laravelVersion, phpVersion, guestbookEntries = [] }: Pro
             unlock({
               id: 'secret_agent',
               title: 'Secret Agent',
-              description: 'Menemukan gerbang rahasia menuju Hacker Terminal.'
+              description: 'Discovered the secret gateway to the Hacker Terminal.'
             });
           }
           return !prev;
@@ -344,7 +344,7 @@ function PortfolioApp({ laravelVersion, phpVersion, guestbookEntries = [] }: Pro
                 </span>
               </div>
               <p className="text-[10px] font-mono text-zinc-400 leading-relaxed max-w-xs text-center md:text-left">
-                Membangun pengalaman digital masa depan dengan estetika masa lalu.
+                Building digital experiences of the future with the aesthetics of the past.
               </p>
               
               <div className="flex gap-3 pt-2">

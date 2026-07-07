@@ -45,7 +45,7 @@ export default function ProjectsSection() {
             />
           </div>
           <p className="text-xs font-mono text-gray-600 max-w-xl mx-auto">
-            Kumpulan *"Game Cartridge"* yang berisi karya-karya terbaik dari perjalanan karir saya di dunia pengembangan digital.
+            A collection of "Game Cartridges" containing the best works from my career journey in digital development.
           </p>
         </div>
 

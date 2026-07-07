@@ -20,7 +20,7 @@ export default function EducationSection() {
             />
           </div>
           <p className="text-xs font-mono text-gray-500 max-w-md mx-auto">
-            Lembaga pendidikan formal tempat saya mengumpulkan ilmu dasar dan spesialisasi keahlian siber.
+            Formal educational institutions where I gather foundational knowledge and specialize in cybersecurity skills.
           </p>
         </div>
 

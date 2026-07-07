@@ -40,7 +40,7 @@ export default function ExperienceSection() {
             />
           </div>
           <p className="text-xs font-mono text-gray-500 max-w-md mx-auto">
-            Perjalanan karir dan riwayat organisasi yang ditata berdasarkan Level Game dari pencapaian terdahulu hingga sekarang.
+            Career journey and organizational history structured as Game Levels from past achievements to the present.
           </p>
         </div>
 

@@ -74,7 +74,7 @@ export default function ContactSection() {
             />
           </div>
           <p className="text-xs font-mono text-gray-500 max-w-md mx-auto">
-            Kirimkan pesan Anda langsung lewat pos terminal ini, atau temukan saya melalui koordinat sosial media berikut.
+            Send me a direct message through this terminal outpost, or find me via the social coordinates below.
           </p>
         </div>
 
