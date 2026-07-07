@@ -354,7 +354,8 @@ export const CERTIFICATES_LIST: Certificate[] = [
     year: "2024",
     badgeType: "silver",
     color: "yellow",
-    description: "Official certificate awarded for participating in the 'Hello, World!' event organized by the President University Developer Club."
+    description: "Official certificate awarded for participating in the 'Hello, World!' event organized by the President University Developer Club.",
+    imageUrl: "/images/certificates/Certificate of Participation - Hello World! Event.jpeg"
   },
   {
     id: "cert-purtc",
@@ -363,7 +364,8 @@ export const CERTIFICATES_LIST: Certificate[] = [
     year: "2024",
     badgeType: "silver",
     color: "red",
-    description: "Collaborating with the next generation of innovators at President University to explore and master the latest technologies in robotics and AI."
+    description: "Collaborating with the next generation of innovators at President University to explore and master the latest technologies in robotics and AI.",
+    imageUrl: "/images/certificates/PURTC First Big Meeting.jpeg"
   },
   {
     id: "cert-presuniv-1",
