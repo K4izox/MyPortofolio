@@ -23,7 +23,7 @@ export interface Education {
   score: string;
   details: string;
   color: "blue" | "green";
-  certificateId?: string;
+  certificateIds?: string[];
 }
 
 export interface Certificate {
@@ -190,7 +190,7 @@ export const EDUCATION_LIST: Education[] = [
     score: "Grade: 3.79 / 4.00",
     details: "Undergraduate student in Information Technology with a strong focus on Cybersecurity, Cloud Infrastructure, and Software Development. Actively engaged in campus technology communities to bridge the gap between theoretical computer science, software programming, and practical hardware integration. Passionate about continuously learning and applying tech innovations to solve real-world problems. (Activities: PURTC, PUDC, Comptech Enthusiast)",
     color: "blue",
-    certificateId: "cert-presuniv"
+    certificateIds: ["cert-presuniv-1", "cert-presuniv-2", "cert-presuniv-3"]
   },
   {
     institution: "Madrasah Aliyah Negeri 1 Pontianak",
@@ -366,13 +366,31 @@ export const CERTIFICATES_LIST: Certificate[] = [
     description: "Collaborating with the next generation of innovators at President University to explore and master the latest technologies in robotics and AI."
   },
   {
-    id: "cert-presuniv",
-    title: "President University Active Student Certificate",
+    id: "cert-presuniv-1",
+    title: "The Art & Algorithms of Design",
     issuer: "President University",
     year: "2024",
     badgeType: "gold",
     color: "blue",
-    description: "Official recognition of active participation and academic standing as an Informatics/Cybersecurity undergraduate student."
+    imageUrl: "/images/certificates/The Art & Algorithms of Design.jpeg"
+  },
+  {
+    id: "cert-presuniv-2",
+    title: "Opportura Education & Career Seminar",
+    issuer: "President University",
+    year: "2024",
+    badgeType: "silver",
+    color: "blue",
+    imageUrl: "/images/certificates/Opportura Education & Career Seminar.jpeg"
+  },
+  {
+    id: "cert-presuniv-3",
+    title: "Bilateral Relations Between Indonesia and Ukraine",
+    issuer: "President University",
+    year: "2024",
+    badgeType: "silver",
+    color: "blue",
+    imageUrl: "/images/certificates/Bilateral Relations Between Indonesia and Ukraine.jpeg"
   },
   {
     id: "cert-coming-soon",

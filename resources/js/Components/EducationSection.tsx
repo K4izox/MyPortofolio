@@ -85,17 +85,25 @@ export default function EducationSection() {
                     <span className="text-black font-extrabold">{edu.score}</span>
                   </div>
 
-                  {edu.certificateId && (
-                    <button
-                      onClick={() => {
-                        const cert = CERTIFICATES_LIST.find(c => c.id === edu.certificateId);
-                        if (cert) setSelectedCert(cert);
-                      }}
-                      className="w-full flex items-center justify-center gap-2 bg-black text-white hover:bg-gray-800 text-[9px] font-pixel px-3 py-2 pixel-border-sm transition-colors active:translate-y-[1px]"
-                    >
-                      <Award size={12} className="text-yellow-400" />
-                      VIEW ACTIVE STUDENT STATUS
-                    </button>
+                  {/* Multiple Certificates */}
+                  {edu.certificateIds && edu.certificateIds.length > 0 && (
+                    <div className="flex flex-col gap-1.5 mt-2">
+                      {edu.certificateIds.map((certId, i) => {
+                        const certInfo = CERTIFICATES_LIST.find(c => c.id === certId);
+                        return (
+                          <button
+                            key={certId}
+                            onClick={() => {
+                              if (certInfo) setSelectedCert(certInfo);
+                            }}
+                            className="w-full flex items-center justify-center gap-2 bg-black text-white hover:bg-gray-800 text-[9px] font-pixel px-3 py-2 pixel-border-sm transition-colors active:translate-y-[1px]"
+                          >
+                            <Award size={10} className="text-yellow-400" />
+                            VIEW CERT: {certInfo?.title.substring(0, 15)}...
+                          </button>
+                        );
+                      })}
+                    </div>
                   )}
                 </div>
               </div>
