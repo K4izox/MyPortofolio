@@ -20,7 +20,7 @@ export default function BgmPlayer() {
         setIsPlaying(true);
       }).catch(err => {
         console.error("Audio playback failed:", err);
-        alert("⚠️ Musik gagal diputar. Pastikan file '/assets/bgm.m4a' tersedia atau coba lagi setelah file termuat (ukuran file mungkin besar).");
+        alert("⚠️ Musik gagal diputar. Pastikan file '/assets/bgm.mp3' tersedia atau coba lagi setelah file termuat (ukuran file mungkin besar).");
       });
     }
   };
@@ -28,7 +28,7 @@ export default function BgmPlayer() {
   return (
     <>
       {/* Hidden audio element for better mobile browser support */}
-      <audio ref={audioRef} src="/assets/bgm.m4a" loop preload="none" />
+      <audio ref={audioRef} src="/assets/bgm.mp3" loop preload="none" />
       
       <button
         onClick={togglePlay}
