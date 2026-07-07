@@ -147,7 +147,7 @@ export const EXPERIENCE_TIMELINE: Experience[] = [
     level: 3,
     role: "User Interface/User Experience Designer",
     organization: "GasGawe Indonesia",
-    period: "May 2025 – Present",
+    period: "Feb 2024 – Dec 2024",
     color: "blue",
     description: [
       "Spearheaded UI/UX design initiatives during a 1-year internship at GasGawe Indonesia.",

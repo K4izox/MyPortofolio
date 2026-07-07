@@ -290,6 +290,13 @@ export default function PixelAvatar() {
       <div className="mt-4 animate-pulse flex items-center gap-1.5 text-[8px] font-pixel text-[#4285F4] select-none cursor-default">
         <span>&gt;&gt; HOVER TO REVEAL IDENTITY &lt;&lt;</span>
       </div>
+
+      {/* Preload images to prevent delay on mobile/first hover */}
+      <div className="hidden">
+        <img src="/images/reza-developer.png" alt="preload developer" />
+        <img src="/images/reza-designer.png" alt="preload designer" />
+        <img src="/images/reza-hacker.png" alt="preload hacker" />
+      </div>
     </div>
   );
 }
