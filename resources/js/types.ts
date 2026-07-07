@@ -182,18 +182,18 @@ export const EXPERIENCE_TIMELINE: Experience[] = [
 export const EDUCATION_LIST: Education[] = [
   {
     institution: "President University",
-    degree: "Bachelor of Computer Science - Informatics (Cybersecurity)",
-    period: "2024 – Present",
-    score: "GPA: 3.79 / 4.00",
-    details: "Mempelajari fundamental ilmu komputer, struktur data, pemrograman berorientasi objek, keamanan jaringan, kriptografi, forensik digital, etika peretasan, dan keamanan cloud AWS.",
+    degree: "Bachelor of Computer Science, Information Technology / Informatics",
+    period: "Aug 2024 – 2028",
+    score: "Grade: 3.80 / 4.00",
+    details: "Undergraduate student in Information Technology with a strong focus on Cybersecurity, Cloud Infrastructure, and Software Development. Actively engaged in campus technology communities to bridge the gap between theoretical computer science, software programming, and practical hardware integration. Passionate about continuously learning and applying tech innovations to solve real-world problems. (Activities: PURTC, PUDC, Comptech Enthusiast)",
     color: "blue"
   },
   {
     institution: "Madrasah Aliyah Negeri 1 Pontianak",
-    degree: "Jurusan Matematika dan Ilmu Pengetahuan Alam (MIPA)",
-    period: "2021 – 2024",
-    score: "Nilai Rata-rata: 89.9 / 100",
-    details: "Aktif dalam olimpiade sains/TIK sekolah, mendalami dasar matematika komputer, pemrograman dasar, dan fisika kelistrikan.",
+    degree: "High School Diploma, Natural Sciences and Mathematics (MIPA)",
+    period: "Jul 2021 – May 2024",
+    score: "Grade: 89.9 / 100",
+    details: "Focused on Natural Sciences and Mathematics (MIPA). Engaged in the Water Rocket extracurricular program, which provided practical experience in applied science, structural design, and collaborative problem-solving.",
     color: "green"
   }
 ];
