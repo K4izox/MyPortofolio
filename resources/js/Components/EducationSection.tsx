@@ -1,9 +1,12 @@
-import React from "react";
-import { EDUCATION_LIST } from "../types";
+import React, { useState } from "react";
+import { EDUCATION_LIST, CERTIFICATES_LIST, Certificate } from "../types";
 import { GraduationCap, Award, Star, BookOpen } from "lucide-react";
 import TypewriterHeading from "./TypewriterHeading";
+import CrtModal from "./CrtModal";
 
 export default function EducationSection() {
+  const [selectedCert, setSelectedCert] = useState<Certificate | null>(null);
+
   return (
     <section id="education" className="py-16 bg-white border-b-4 border-black pixel-grid-bg">
       <div className="max-w-4xl mx-auto px-4">
@@ -73,18 +76,44 @@ export default function EducationSection() {
                   </p>
                 </div>
 
-                {/* Score Stats Badge */}
-                <div className="bg-gray-100 border-2 border-black p-3 flex items-center justify-between font-mono text-xs">
-                  <span className="text-gray-500 font-bold flex items-center gap-1 uppercase">
-                    <Star size={12} className="text-[#FBBC05] fill-[#FBBC05]" /> INT SCORE:
-                  </span>
-                  <span className="text-black font-extrabold">{edu.score}</span>
+                {/* Score Stats Badge and Optional Certificate Button */}
+                <div className="flex flex-col gap-2 mt-auto">
+                  <div className="bg-gray-100 border-2 border-black p-3 flex items-center justify-between font-mono text-xs">
+                    <span className="text-gray-500 font-bold flex items-center gap-1 uppercase">
+                      <Star size={12} className="text-[#FBBC05] fill-[#FBBC05]" /> INT SCORE:
+                    </span>
+                    <span className="text-black font-extrabold">{edu.score}</span>
+                  </div>
+
+                  {edu.certificateId && (
+                    <button
+                      onClick={() => {
+                        const cert = CERTIFICATES_LIST.find(c => c.id === edu.certificateId);
+                        if (cert) setSelectedCert(cert);
+                      }}
+                      className="w-full flex items-center justify-center gap-2 bg-black text-white hover:bg-gray-800 text-[9px] font-pixel px-3 py-2 pixel-border-sm transition-colors active:translate-y-[1px]"
+                    >
+                      <Award size={12} className="text-yellow-400" />
+                      VIEW ACTIVE STUDENT STATUS
+                    </button>
+                  )}
                 </div>
               </div>
             );
           })}
         </div>
       </div>
+
+      {/* Certificate Modal */}
+      <CrtModal 
+        isOpen={!!selectedCert}
+        onClose={() => setSelectedCert(null)}
+        title={selectedCert?.title || ""}
+        description={selectedCert?.description}
+        imageUrl={selectedCert?.imageUrl}
+        pdfUrl={selectedCert?.pdfUrl}
+        badgeType={selectedCert?.badgeType}
+      />
     </section>
   );
 }

@@ -1,9 +1,12 @@
-import React from "react";
-import { EXPERIENCE_TIMELINE } from "../types";
+import React, { useState } from "react";
+import { EXPERIENCE_TIMELINE, CERTIFICATES_LIST, Certificate } from "../types";
 import { Award, Star, Calendar, ArrowUpRight } from "lucide-react";
 import TypewriterHeading from "./TypewriterHeading";
+import CrtModal from "./CrtModal";
 
 export default function ExperienceSection() {
+  const [selectedCert, setSelectedCert] = useState<Certificate | null>(null);
+
   const getGoogleColorHex = (color: string) => {
     switch (color) {
       case "blue": return "#4285F4";
@@ -112,6 +115,20 @@ export default function ExperienceSection() {
                         +UIUX SPELLS
                       </span>
                     )}
+
+                    {/* View Certificate Button */}
+                    {exp.certificateId && (
+                      <button
+                        onClick={() => {
+                          const cert = CERTIFICATES_LIST.find(c => c.id === exp.certificateId);
+                          if (cert) setSelectedCert(cert);
+                        }}
+                        className="ml-auto flex items-center gap-1 bg-black text-white hover:bg-gray-800 text-[8px] font-pixel px-2 py-1 pixel-border-sm transition-colors active:translate-y-[1px]"
+                      >
+                        <Award size={10} className="text-yellow-400" />
+                        VIEW BADGE
+                      </button>
+                    )}
                   </div>
                 </div>
               </div>
@@ -119,6 +136,17 @@ export default function ExperienceSection() {
           })}
         </div>
       </div>
+
+      {/* Certificate Modal */}
+      <CrtModal 
+        isOpen={!!selectedCert}
+        onClose={() => setSelectedCert(null)}
+        title={selectedCert?.title || ""}
+        description={selectedCert?.description}
+        imageUrl={selectedCert?.imageUrl}
+        pdfUrl={selectedCert?.pdfUrl}
+        badgeType={selectedCert?.badgeType}
+      />
     </section>
   );
 }

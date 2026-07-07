@@ -13,6 +13,7 @@ export interface Experience {
   period: string;
   description: string[];
   color: "blue" | "red" | "yellow" | "green";
+  certificateId?: string;
 }
 
 export interface Education {
@@ -22,6 +23,7 @@ export interface Education {
   score: string;
   details: string;
   color: "blue" | "green";
+  certificateId?: string;
 }
 
 export interface Certificate {
@@ -159,6 +161,7 @@ export const EXPERIENCE_TIMELINE: Experience[] = [
     organization: "President University Developers Club",
     period: "Dec 2024 – Present",
     color: "yellow",
+    certificateId: "cert-pudc",
     description: [
       "Participating in campus-based developer communities to expand knowledge in software engineering, web development, and algorithmic design.",
       "Collaborating with peers to share programming insights and attending technical events to strengthen foundational coding skills."
@@ -170,6 +173,7 @@ export const EXPERIENCE_TIMELINE: Experience[] = [
     organization: "President University Robotics and Technology Club",
     period: "Nov 2024 – Present",
     color: "red",
+    certificateId: "cert-purtc",
     description: [
       "Engaging with a student community focused on developing skills and knowledge in robotics and technology.",
       "Collaborating with peers to innovate and apply technical knowledge to real-world projects.",
@@ -185,7 +189,8 @@ export const EDUCATION_LIST: Education[] = [
     period: "Aug 2024 – 2028",
     score: "Grade: 3.79 / 4.00",
     details: "Undergraduate student in Information Technology with a strong focus on Cybersecurity, Cloud Infrastructure, and Software Development. Actively engaged in campus technology communities to bridge the gap between theoretical computer science, software programming, and practical hardware integration. Passionate about continuously learning and applying tech innovations to solve real-world problems. (Activities: PURTC, PUDC, Comptech Enthusiast)",
-    color: "blue"
+    color: "blue",
+    certificateId: "cert-presuniv"
   },
   {
     institution: "Madrasah Aliyah Negeri 1 Pontianak",
@@ -341,6 +346,33 @@ export const CERTIFICATES_LIST: Certificate[] = [
     badgeType: "diamond",
     color: "blue",
     pdfUrl: "/images/certificates/Coursera Google AI.pdf"
+  },
+  {
+    id: "cert-pudc",
+    title: "Certificate of Participation - Hello World! Event",
+    issuer: "President University Developers Club",
+    year: "2024",
+    badgeType: "silver",
+    color: "yellow",
+    description: "Official certificate awarded for participating in the 'Hello, World!' event organized by the President University Developer Club."
+  },
+  {
+    id: "cert-purtc",
+    title: "PURTC First Big Meeting",
+    issuer: "President University Robotics and Technology Club",
+    year: "2024",
+    badgeType: "silver",
+    color: "red",
+    description: "Collaborating with the next generation of innovators at President University to explore and master the latest technologies in robotics and AI."
+  },
+  {
+    id: "cert-presuniv",
+    title: "President University Active Student Certificate",
+    issuer: "President University",
+    year: "2024",
+    badgeType: "gold",
+    color: "blue",
+    description: "Official recognition of active participation and academic standing as an Informatics/Cybersecurity undergraduate student."
   },
   {
     id: "cert-coming-soon",
