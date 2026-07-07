@@ -143,26 +143,25 @@ export const SKILLS_INVENTORY: Skill[] = [
 export const EXPERIENCE_TIMELINE: Experience[] = [
   {
     level: 3,
-    role: "UI/UX Designer",
+    role: "User Interface/User Experience Designer",
     organization: "GasGawe Indonesia",
-    period: "2025 – 2026",
+    period: "May 2025 – Present",
     color: "blue",
     description: [
-      "Merancang antarmuka pengguna (UI) yang intuitif dan alur pengguna (UX) yang mulus untuk platform karir.",
-      "Melakukan riset pengguna mendalam, pembuatan user persona, dan usability testing.",
-      "Membuat wireframe high-fidelity, interactive prototype, dan berkolaborasi erat dengan tim developer untuk implementasi desain."
+      "Spearheaded UI/UX design initiatives during a 1-year internship at GasGawe Indonesia.",
+      "Focused on creating user-friendly interfaces by developing comprehensive wireframes, user flows, and interactive prototypes.",
+      "Worked closely with cross-functional teams, including developers and product managers, to bridge the gap between design and technical implementation, ultimately delivering seamless and visually appealing digital experiences."
     ]
   },
   {
     level: 2,
     role: "Member",
     organization: "President University Developers Club",
-    period: "2024 – Present",
+    period: "Dec 2024 – Present",
     color: "yellow",
     description: [
-      "Aktif berpartisipasi dalam pengembangan software internal kampus dan open-source.",
-      "Mengikuti bootcamp internal tentang modern web development, API, dan version control (Git).",
-      "Berkolaborasi dalam hackathon dan proyek teknologi berskala komunitas."
+      "Participating in campus-based developer communities to expand knowledge in software engineering, web development, and algorithmic design.",
+      "Collaborating with peers to share programming insights and attending technical events to strengthen foundational coding skills."
     ]
   },
   {
@@ -172,9 +171,9 @@ export const EXPERIENCE_TIMELINE: Experience[] = [
     period: "2024 – Present",
     color: "red",
     description: [
-      "Mempelajari pemrograman embedded system (Arduino, Raspberry Pi) dan sirkuit listrik.",
-      "Berkontribusi dalam riset purwarupa robotika pintar berbasis mikrokontroler.",
-      "Mengeksplorasi integrasi sensor keamanan IoT dan cloud storage."
+      "Studying embedded systems programming (Arduino, Raspberry Pi) and electrical circuits.",
+      "Contributing to the research of smart robotics prototypes based on microcontrollers.",
+      "Exploring the integration of IoT security sensors and cloud storage."
     ]
   }
 ];
@@ -184,7 +183,7 @@ export const EDUCATION_LIST: Education[] = [
     institution: "President University",
     degree: "Bachelor of Computer Science, Information Technology / Informatics",
     period: "Aug 2024 – 2028",
-    score: "Grade: 3.80 / 4.00",
+    score: "Grade: 3.79 / 4.00",
     details: "Undergraduate student in Information Technology with a strong focus on Cybersecurity, Cloud Infrastructure, and Software Development. Actively engaged in campus technology communities to bridge the gap between theoretical computer science, software programming, and practical hardware integration. Passionate about continuously learning and applying tech innovations to solve real-world problems. (Activities: PURTC, PUDC, Comptech Enthusiast)",
     color: "blue"
   },
