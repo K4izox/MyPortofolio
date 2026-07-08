@@ -443,6 +443,7 @@ export const PROJECTS_LIST: Project[] = [
     description: "Intelligent AI chatbot assistant built using a Flask backend and direct integration with the Gemini API.",
     imageColor: "red",
     techStack: ["Python", "Flask", "Gemini API"],
+    demoUrl: "https://novaai-indol.vercel.app/",
     githubUrl: "https://github.com/K4izox/HACKTIV8-Project"
   },
   {
