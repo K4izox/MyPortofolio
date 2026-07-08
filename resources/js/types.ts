@@ -444,7 +444,8 @@ export const PROJECTS_LIST: Project[] = [
     imageColor: "red",
     techStack: ["Python", "Flask", "Gemini API"],
     demoUrl: "https://novaai-indol.vercel.app/",
-    githubUrl: "https://github.com/K4izox/HACKTIV8-Project"
+    githubUrl: "https://github.com/K4izox/HACKTIV8-Project",
+    imageUrl: "/images/projects/novaai.png"
   },
   {
     id: "proj-4",
