@@ -163,7 +163,7 @@ export default function DinoGame() {
       cloud.x -= 0.4;
       if (cloud.x < -60) cloud.x = 600;
       if (cloudRefs.current[i]) {
-        cloudRefs.current[i]!.style.left = `${cloud.x}px`;
+        cloudRefs.current[i]!.style.transform = `translate3d(${cloud.x}px, ${cloud.y}px, 0)`;
       }
     });
 
@@ -188,7 +188,7 @@ export default function DinoGame() {
       setObstacleType(types[Math.floor(Math.random() * types.length)]);
     }
     if (obstacleRef.current) {
-      obstacleRef.current.style.left = `${obstaclePos.current.x}px`;
+      obstacleRef.current.style.transform = `translate3d(${obstaclePos.current.x}px, 0, 0)`;
     }
 
     // 3. Update & Render Dino Physics
@@ -281,15 +281,15 @@ export default function DinoGame() {
       <div
         onClick={(e) => { e.preventDefault(); handleAction(); }}
         onTouchStart={(e) => { e.preventDefault(); handleAction(); }}
-        className="relative h-56 sm:h-64 bg-[#F8F9FA] pixel-border overflow-hidden select-none cursor-pointer group active:bg-gray-100 transition-colors crt-effect neon-border touch-manipulation"
+        className="relative h-56 sm:h-64 bg-[#F8F9FA] pixel-border overflow-hidden select-none cursor-pointer group active:bg-gray-100 transition-colors touch-manipulation"
       >
         {/* Pixel Clouds in Background */}
         {cloudsPos.current.map((cloud, i) => (
           <div
             key={i}
             ref={(el) => (cloudRefs.current[i] = el)}
-            className="absolute opacity-40 select-none pointer-events-none"
-            style={{ left: `${cloud.x}px`, top: `${cloud.y}px` }}
+            className="absolute opacity-40 select-none pointer-events-none top-0 left-0"
+            style={{ transform: `translate3d(${cloud.x}px, ${cloud.y}px, 0)` }}
           >
             {/* 8-bit cloud representation */}
             <svg width="36" height="12" viewBox="0 0 36 12" fill="#D1D5DB">
@@ -359,8 +359,8 @@ export default function DinoGame() {
         {isPlaying && (
           <div
             ref={obstacleRef}
-            className="absolute bottom-6"
-            style={{ left: "600px" }}
+            className="absolute bottom-6 left-0 will-change-transform"
+            style={{ transform: "translate3d(600px, 0, 0)" }}
           >
             {obstacleType === "cactus1" && (
               <svg width="24" height="34" viewBox="0 0 12 17" fill="#EA4335">
