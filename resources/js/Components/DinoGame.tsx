@@ -83,11 +83,17 @@ export default function DinoGame() {
     }
   };
 
-  const jump = () => {
-    if (isJumpingRef.current || !isPlayingRef.current || isGameOverRef.current) return;
-    isJumpingRef.current = true;
-    dinoPos.current.velocity = 11; // Initial jump velocity
-    playRetroSound("jump");
+  const handleAction = () => {
+    if (!isPlayingRef.current && !isGameOverRef.current) {
+      startGame();
+    } else if (isGameOverRef.current) {
+      resetGame();
+    } else {
+      if (isJumpingRef.current) return;
+      isJumpingRef.current = true;
+      dinoPos.current.velocity = 10.5; // Slightly lower initial jump velocity for balance
+      playRetroSound("jump");
+    }
   };
 
   // Keyboard controls
@@ -101,13 +107,7 @@ export default function DinoGame() {
 
       if (e.code === "Space" || e.code === "ArrowUp") {
         e.preventDefault();
-        if (!isPlayingRef.current && !isGameOverRef.current) {
-          startGame();
-        } else if (isGameOverRef.current) {
-          resetGame();
-        } else {
-          jump();
-        }
+        handleAction();
       }
     };
     window.addEventListener("keydown", handleKeyDown);
@@ -137,7 +137,7 @@ export default function DinoGame() {
     obstaclePos.current.x = 600;
     dinoPos.current.y = 0;
     dinoPos.current.velocity = 0;
-    gameSpeedRef.current = 6;
+    gameSpeedRef.current = 4.5; // Slower initial speed
     isJumpingRef.current = false;
     
     if (animFrameId.current) cancelAnimationFrame(animFrameId.current);
@@ -180,7 +180,7 @@ export default function DinoGame() {
       
       if (scoreRef.current > 0 && scoreRef.current % 100 === 0) {
         playRetroSound("score");
-        gameSpeedRef.current = Math.min(gameSpeedRef.current + 0.5, 12); // Slowly increase speed
+        gameSpeedRef.current = Math.min(gameSpeedRef.current + 0.3, 10); // Slowly increase speed, lower max speed
       }
 
       // Pick random next obstacle
@@ -279,8 +279,8 @@ export default function DinoGame() {
 
       {/* Main Game Stage Frame */}
       <div
-        onClick={jump}
-        onTouchStart={jump}
+        onClick={(e) => { e.preventDefault(); handleAction(); }}
+        onTouchStart={(e) => { e.preventDefault(); handleAction(); }}
         className="relative h-56 sm:h-64 bg-[#F8F9FA] pixel-border overflow-hidden select-none cursor-pointer group active:bg-gray-100 transition-colors crt-effect neon-border touch-manipulation"
       >
         {/* Pixel Clouds in Background */}

@@ -1,6 +1,6 @@
 {
   "resources/js/Pages/Welcome.tsx": {
-    "file": "assets/Welcome-CXa3kU_1.js",
+    "file": "assets/Welcome-BeDPZba_.js",
     "name": "Welcome",
     "src": "resources/js/Pages/Welcome.tsx",
     "isDynamicEntry": true,
@@ -9,7 +9,7 @@
     ]
   },
   "resources/js/app.tsx": {
-    "file": "assets/app-DZm8EPiX.js",
+    "file": "assets/app-H9ownTlI.js",
     "name": "app",
     "src": "resources/js/app.tsx",
     "isEntry": true,
