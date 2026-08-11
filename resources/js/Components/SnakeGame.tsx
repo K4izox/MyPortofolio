@@ -390,7 +390,7 @@ export default function SnakeGame() {
       </div>
 
       {/* Mobile & Tablet D-Pad Controls */}
-      <div className="mt-6 grid grid-cols-3 gap-3 w-64 mx-auto lg:hidden mb-4">
+      <div className="mt-6 grid grid-cols-3 gap-3 w-64 mx-auto mb-4">
         <div />
         <button
           onClick={() => handleControlClick(0, -1)}
